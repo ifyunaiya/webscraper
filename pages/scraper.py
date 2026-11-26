@@ -35,6 +35,7 @@ async def fetch_product(session,url):
     results = []
     # print(await get_page(session, url))
     content = await get_page(session, url)
+    print(content.keys())
     if content:
         results = parse(content)
 
@@ -56,31 +57,6 @@ def parse(data):
     for key, value in data.items():
         print(key, type(value))
 
-    def find_keys(data, keywords, path=""):
-        if isinstance(data, dict):
-            for key, value in data.items():
-                current_path = f"{path}.{key}" if path else key
-
-                if any(word in key.lower() for word in keywords):
-                    print(current_path, "=", value)
-
-                find_keys(value, keywords, current_path)
-
-        elif isinstance(data, list):
-            for index, item in enumerate(data):
-                find_keys(item, keywords, f"{path}[{index}]")
-
-
-    find_keys(data, [
-        "price",
-        "product",
-        "name",
-        "image",
-        "color",
-        "size",
-        "stock",
-        "availability"
-    ])
 
     for color in data.get('product', {}).get('detail', {}).get('colors', []):
         print(color)
@@ -122,7 +98,7 @@ def parse(data):
 
 
 if __name__ == "__main__":
-    result = asyncio.run(main('https://www.zara.com/uk/en/printed-shoulder-tote-bag-p16224810.html?v1=545490482&v2=2419925'))
+    result = asyncio.run(main('https://www.zara.com/uk/en/off-the-shoulder-knit-top-p02142047.html?v1=509631874&v2=2419925'))
     print(result)
 
 

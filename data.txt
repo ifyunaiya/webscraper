@@ -1161,7 +1161,7 @@
             "defaultVersion": 1,
             "clientId": "web-za"
         },
-        "wechatAppId": "wxd95a72c5f595b6a3",
+        "wechatAppId": "",
         "appLinks": {
             "ios": "https://itunes.apple.com/app/id547951480?mt=8",
             "android": "https://play.google.com/store/apps/details?id=com.inditex.zara"
@@ -2444,7 +2444,7 @@
                 },
                 "isGiftCardExpirationDisclaimerRequired": false,
                 "googleServices": {
-                    "key": "AIzaSyCTJ_0LCrIe8CRiafZrm0FiCROH_dYGfIo"
+                    "key": ""
                 },
                 "tracking": {
                     "finalMilestones": [
