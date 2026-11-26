@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Geist+Mono&display=swap');
+
+
+:root {
+  --font-system: "Geist", sans-serif;
+  --font-brand-title: "DM Sans", sans-serif;
+  --font-brand-text: "DM Sans", sans-serif;
+  --font-monospace: "Geist Mono", monospace;
+}
+
+.system{
+    font-family: var(--font-system);
+}
+
+.brand-title {
+    font-family: var(--font-brand-title);
+}
+
+.brand-text {
+    font-family: var(--font-brand-text);
+}
+
+.monospace {
+    font-family: var(--font-monospace);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  background-color: #E6C7DD;
+}
+
+.navbar {
+  background-color: #632C53;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  color: #f3f4f6;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+  color: #60a5fa;
+}
+
+.nav-toggle,
+.nav-hamburger {
+  display: none;
+}
+
+.nav-hamburger {
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.nav-hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-wrap: wrap;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: static;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #632C53;
+    gap: 1rem;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+
+  .nav-toggle:checked ~ .nav-menu {
+    max-height: 400px;
+    padding: 1rem 2rem;
+  }
+
+  .nav-toggle:checked ~ .nav-hamburger span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .nav-toggle:checked ~ .nav-hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle:checked ~ .nav-hamburger span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+}

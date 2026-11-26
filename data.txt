@@ -1,0 +1,3270 @@
+{
+    "noIndex": false,
+    "mkSpots": {
+        "ESpot_Copyright": {
+            "key": "ESpot_Copyright",
+            "content": {
+                "content": "<span class='zds-label-s'>\u00a9 All rights reserved</span>"
+            }
+        },
+        "ESpot_WebCommonScripts": {
+            "type": "html",
+            "content": {
+                "content": "\n<script>\n   (function() {\n      // Function to check if an element is in the viewport\n      function isElementInViewport(el) {\n        const rect = el.getBoundingClientRect();\n        return (\n          rect.top >= 0 &&\n          rect.left >= 0 &&\n          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&\n          rect.right <= (window.innerWidth || document.documentElement.clientWidth)\n        );\n      }\n    \n      const NEW_IN = /(I2024-MUJER-ULTIMA-SEMANA|I2024-MUJER-BANNERS-JJ|I2024-HOMBRE-GUITARRICADELAFUENTE)/;\n      const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);\n    \n      function check() {\n        if (NEW_IN.test(document.documentElement.id)) {\n          const videoElements = document.querySelectorAll('video:not(.autoplayed');\n          videoElements.forEach((video, idx) => {\n            if (idx > 0 && !isElementInViewport(video)) return;\n            const toggleButton = video.parentElement.querySelector('.media-video-audio-toggle')\n            if (!toggleButton) return;\n            if (video.muted) toggleButton.click();\n            video.classList.add('autoplayed');\n          });\n        }\n      }\n    \n      _zaraRequire(['plugins/router/engine'], (Router) => {\n        if (!isSafari) {\n            Router.registerMiddleware('beforeShow', () => {\n                // Add scroll event listener to check for videos in the viewport\n                window.addEventListener('scroll', check);\n                setTimeout(check, 500);\n                setTimeout(check, 1000);\n                setTimeout(check, 2000);\n                setTimeout(check, 3000);\n            });\n        }\n      })\n    })();\n    \n    (function() {\n        // Styles to override Bambuser Streaming Player\n        window.__bambuserPlayerCSSOverrides = `\n        /* Invert main elements */\n        .aside-content,\n        .snackbar,\n        .drawer-wrapper,\n        /* Revert elements */\n        .aside-content img,\n        .aside-content .selection-indicator,\n        .color-picker-container,\n        .size-picker,\n        .variation-list.drawer-variation-grid.in-drawer,\n        .snackbar img,\n        .drawer-wrapper img {\n            filter: invert(1);\n        }\n            \n        /* Reduce font size */\n        .aside-content * {\n            font-size: 12px !important;\n        }\n            \n        /* Back arrow button shadow */\n        .aside-content .aside-header svg {\n            filter: drop-shadow(2px 1px 2px white);\n        }\n    \n        /* Redesign size picker */\n        .v2 .variation-container .variation-list li button {\n            border: 0.5px solid white !important;\n            background-color: transparent !important;\n            color: white !important;\n            opacity: 1 !important;\n        }\n        \n        .v2 .variation-container .variation-list li button:not(.out-of-stock):hover {\n            background-color: white !important;\n            color: black !important;\n        }\n        \n        .v2 .variation-container .variation-list li button.selected {\n            background-color: white !important;\n            color: black !important;\n        }\n        \n        .v2 .variation-container .variation-list li button.out-of-stock {\n            opacity: 0.5 !important;\n        }\n        \n        /* Color picker */\n        .v2 .color-picker-container li.selected {\n            border-color: white;\n        }\n        \n        .v2 .color-picker-container li button {\n            border: 1px solid #3b3b3b;\n        }\n        \n        /* Add top line for mobile drawer */\n        .drawer-inner-content {\n            border-top: 1px solid #aaa !important;\n        }\n        \n        /* Remove chat background gradient */\n        .darkening-gradient-size-default,\n        .darkening-gradient-size-medium,\n        .darkening-gradient-size-large {\n           background: none !important;\n        }\n        \n        /* Input border on focus */\n        .v2 .text-input.focus {\n            border-color: black;\n        }\n    \n        .v2 #player #player-blurred-background-canvas { \n            width: 0 !important; \n        }\n    `;\n    })();\n</script>\n"
+            },
+            "key": "ESpot_WebCommonScripts"
+        },
+        "ESpot_Footer_Links": {
+            "type": "html",
+            "content": {
+                "content": "<style>\r\n  .theme--origins .footer-links__wrapper .footer-links__title {\r\n    font-size: var(--font-size-label-m-highlight);\r\n    line-height: var(--line-height-label-m-highlight);\r\n    letter-spacing: var(--letter-spacing-label-m-highlight);\r\n    text-transform: var(--text-transform-label-m-highlight);\r\n    font-stretch: var(--font-stretch-label-m-highlight);\r\n    font-weight: var(--font-weight-label-m-highlight);\r\n  }\r\n\r\n  .theme--origins .footer-links__wrapper .footer-links__list li,\r\n  .theme--origins\r\n    .footer-links__wrapper\r\n    .footer-links__list\r\n    #ot-sdk-btn.ot-sdk-show-settings {\r\n    text-transform: capitalize;\r\n  }\r\n\r\n  .footer-links__wrapper {\r\n    display: flex;\r\n    margin-bottom: calc(-1 * var(--spacing-04));\r\n    width: 100%;\r\n  }\r\n\r\n  .footer-links__wrapper .footer-links__section {\r\n    margin-bottom: var(--spacing-04);\r\n    max-width: calc(100% / 12);\r\n    min-width: 120px;\r\n    padding-right: var(--spacing-05);\r\n  }\r\n\r\n  .footer-links__wrapper .footer-links__title {\r\n    font-size: var(--font-size-label-s-highlight);\r\n    line-height: var(--line-height-label-s-highlight);\r\n    letter-spacing: var(--letter-spacing-label-s-highlight);\r\n    text-transform: var(--text-transform-label-s-highlight);\r\n    font-stretch: var(--font-stretch-label-s-highlight);\r\n    font-weight: var(--font-weight-label-s-highlight);\r\n    margin-bottom: var(--spacing-03);\r\n  }\r\n\r\n  .footer-links__wrapper .footer-links__list li {\r\n    font-size: var(--font-size-label-s);\r\n    line-height: var(--line-height-label-s);\r\n    letter-spacing: var(--letter-spacing-label-s);\r\n    text-transform: var(--text-transform-label-s);\r\n    font-stretch: var(--font-stretch-label-s);\r\n    font-weight: var(--font-weight-label-s);\r\n    margin-bottom: var(--spacing-01);\r\n  }\r\n\r\n  .footer-links__wrapper .footer-links__link {\r\n    text-decoration: none;\r\n  }\r\n\r\n  .footer-links__wrapper .footer-links__link:hover {\r\n    text-decoration: underline;\r\n  }\r\n\r\n  @media screen and (min-width: 768px) {\r\n    .footer-links__wrapper .footer-links__section {\r\n      max-width: 171px;\r\n    }\r\n  }\r\n\r\n  @media screen and (min-width: 1024px) {\r\n    .footer-links__wrapper .footer-links__section {\r\n      max-width: 150px;\r\n    }\r\n  }\r\n\r\n  @media screen and (min-width: 1280px) {\r\n    .footer-links__wrapper .footer-links__section {\r\n      max-width: 187px;\r\n    }\r\n  }\r\n\r\n  @media screen and (min-width: 2160px) {\r\n    .footer-links__wrapper .footer-links__section {\r\n      max-width: 228px;\r\n    }\r\n  }\r\n</style>\r\n\r\n<div class=\"footer-links__wrapper\">\r\n  <div class=\"footer-links__section\">\r\n    <h3 class=\"footer-links__title\">Help</h3>\r\n    <ul class=\"footer-links__list\">\r\n      \r\n        <li>           <a href=\"/uk/en/help-center/RegisterAndLogin\"             class=\"footer-links__link\">My Zara Account</a>         </li>\r\n        <li>           <a href=\"/uk/en/help-center/ItemsAvailability\"             class=\"footer-links__link\">Items and Sizes</a>         </li>\r\n        \r\n          <li>           <a href=\"/uk/en/help-center/GiftCard\"             class=\"footer-links__link\">Gift Options</a>         </li>\r\n        \r\n        <li>           <a href=\"/uk/en/help-center/DeliveryMethods\"             class=\"footer-links__link\">Shipping</a>         </li> \r\n        <li>           <a href=\"/uk/en/help-center/PaymentMethods\"             class=\"footer-links__link\">Payment and Invoices</a>         </li>\r\n        <li>           <a href=\"/uk/en/help-center/OnlinePurchases\"             class=\"footer-links__link\">My purchases</a>         </li>\r\n        <li>           <a href=\"/uk/en/help-center/HowToReturn\"             class=\"footer-links__link\">Exchanges, returns and refunds</a>         </li>\r\n        \r\n          <li>           <a href=\"/uk/en/help-center/ZaraPreownedInfo\"             class=\"footer-links__link\">Zara Pre-Owned</a>         </li>\r\n        \r\n        <li>           <a href=\"/uk/en/help-center/Newsletter\"             class=\"footer-links__link\">Zara Experiences</a>         </li>\r\n         \r\n      \r\n\r\n      \r\n    </ul>\r\n  </div>\r\n\r\n  <div class=\"footer-links__section\">\r\n    <h3 class=\"footer-links__title\">Follow us</h3>\r\n    <ul class=\"footer-links__list\">\r\n      <li>           <a href=\"/uk/en/z-newsletter-nl1400.html?v1=11110\"             class=\"footer-links__link\">Newsletter</a>         </li>\r\n      <li>           <a href=\"https://www.tiktok.com/@zara\"             target=\"_blank\"             class=\"footer-links__link\">Tiktok</a>         </li>\r\n      <li>           <a href=\"https://www.instagram.com/zara/\"             target=\"_blank\"             class=\"footer-links__link\">Instagram</a>         </li>\r\n      <li>           <a href=\"https://www.facebook.com/Zara\"             target=\"_blank\"             class=\"footer-links__link\">Facebook</a>         </li>\r\n      \r\n      \r\n      \r\n      <li>           <a href=\"https://es.pinterest.com/zaraofficial\"             target=\"_blank\"             class=\"footer-links__link\">Pinterest</a>         </li>\r\n      \r\n      \r\n      \r\n      <li>           <a href=\"http://www.youtube.com/user/zara\"             target=\"_blank\"             class=\"footer-links__link\">Youtube</a>         </li>\r\n      \r\n    </ul>\r\n  </div>\r\n\r\n  <div class=\"footer-links__section\">\r\n    <h3 class=\"footer-links__title\">Company</h3>\r\n    <ul class=\"footer-links__list\">\r\n      <li>           <a href=\"/uk/en/z-company-l1391.html?v1=11112\"             class=\"footer-links__link\">About us</a>         </li>\r\n      <li>           <a href=\"/uk/en/z-join-life-l1399.html?v1=1468716\"             class=\"footer-links__link\">Join Life</a>         </li>\r\n      <li>           <a href=\"/uk/en/z-company-l1391.html?v1=18002\"             class=\"footer-links__link\">Offices</a>         </li>\r\n      <li>           <a href=\"/uk/en/z-stores-l1404.html?v1=11108\"             class=\"footer-links__link\">Stores</a>         </li>\r\n      \r\n        <li>           <a href=\"/uk/en/work-with-us-l8081.html?v1=2418844\"             class=\"footer-links__link\">Work with us</a>         </li>\r\n      \r\n      \r\n        <li>           <a href=\"https://static.zara.net/static/pdfs/UK/gender-pay-gap-report/gender-pay-gap-report-20250401.pdf\"             target=\"_blank\"             class=\"footer-links__link\">Gender Pay Gap report</a>         </li>\r\n      \r\n      \r\n      \r\n      \r\n      \r\n      \r\n      \r\n      \r\n    </ul>\r\n  </div>\r\n\r\n  <div class=\"footer-links__section\">\r\n    <h3 class=\"footer-links__title\">Policies</h3>\r\n    <ul class=\"footer-links__list\">\r\n      \r\n        <li>           <a href=\"https://static.zara.net/static//pdfs/UK/privacy-policy/privacy-policy-en_UK-20251113.pdf\"             target=\"_blank\"             class=\"footer-links__link\">Privacy policy</a>         </li>\r\n      \r\n      <li>           <a href=\"https://static.zara.net/static//pdfs/UK/terms-and-conditions/terms-and-conditions-en_UK-20240723.pdf\"             target=\"_blank\"             class=\"footer-links__link\">Purchase conditions</a>         </li>\r\n      \r\n      \r\n      \r\n      \r\n      \r\n        <li>           <a href=\"https://static.zara.net/static/pdfs/UK/giftcard-conditions/giftcard-conditions-en_UK-20221103.pdf\"             target=\"_blank\" id=\"footerGiftCardConditions\"             class=\"footer-links__link\">Gift Card Conditions</a>         </li>\r\n      \r\n      \r\n        <li>           <a href=\"https://static.zara.net/static//pdfs/UK/keyring_tc/keyring_tc_uk_21102025.pdf\"             target=\"_blank\"             class=\"footer-links__link\">Key Ring Gift Card conditions</a>         </li>\r\n      \r\n      \r\n      \r\n        <li>           <a href=\"https://static.zara.net/static/pdfs/ZARA/giftvideo-conditions/giftvideo-conditions-en_ZARA-20210708.pdf\"             target=\"_blank\"             class=\"footer-links__link\">Terms and Conditions of Use of the Gift Video</a>         </li>\r\n      \r\n      \r\n      \r\n      \r\n        <li>           <a href=\"https://static.zara.net/static//pdfs/UK/act-on-modern-slavery/act-on-modern-slavery-en_UK-20250730.pdf\"             target=\"_blank\"             class=\"footer-links__link\">Modern Slavery statement FY24</a>         </li>\r\n      \r\n      \r\n        <li>           <a href=\"https://static.zara.net/static/pdfs/UK/tax-strategy-and-approach/tax-strategy-and-approach-en_UK-20250131.pdf\"             target=\"_blank\"             class=\"footer-links__link\">UK Tax Strategy and Approach</a>         </li>\r\n      \r\n      \r\n      \r\n      \r\n      \r\n        <li><button id=\"ot-sdk-btn\" class=\"ot-sdk-show-settings\">COOKIE SETTINGS</button></li>\r\n      \r\n      \r\n      \r\n      \r\n      \r\n      \r\n      \r\n      \r\n      \r\n    </ul>\r\n  </div>\r\n</div>"
+            },
+            "key": "ESpot_Footer_Links"
+        },
+        "ESpot_LiveStyleSheet": {
+            "type": "html",
+            "content": {
+                "content": "\n<style>\n    .marketing-fashion-content-page .theme--dark {\n    \t--color-main-000: #fff;\n    \t--color-main-005: #f2f2f2;\n    \t--color-main-010: #e5e5e5;\n    \t--color-main-020: #ccc;\n    \t--color-main-040: #999;\n    \t--color-main-060: #666;\n    \t--color-main-080: #333;\n    \t--color-main: #000;\n    }\n     \n    html[data-store=\"cn\"] .shop-cart-prewarming-banner__selection-cell svg {\n        fill: #fff;\n    }\n    \n    html[data-store=\"cn\"] .shop-area #YSF-BTN-HOLDER {\n        bottom: 140px !important;\n    }\n    \n    html[data-store=\"cn\"] .shop-area .layout-header-action__link[data-qa-id=\"open-chat-from-header\"] {\n        display: none;\n    }\n    \n    /* hide carousel product info for beauty in desktop */\n    @media screen and (min-width: 1024px) {\n    \thtml[id*=\"BEAUTY\"] .product-grid-block-carousel__product-info {\n    \t\tdisplay: none;\n    \t}\n    \n    \thtml[id*=\"BEAUTY\"] .product-grid-block-carousel__primary-product {\n    \t\twidth: calc(var(--grid-column-width) * 4 + var(--grid-column-gutter) * 3);\n    \t}\n    \n    \thtml[id*=\"BEAUTY\"] .product-grid-block-carousel__primary-product.product-grid-product--double {\n    \t\tmargin-left: calc(var(--grid-column-width) * 2 + var(--grid-column-gutter) * 2);\n    \t\twidth: calc(var(--grid-column-width) * 8 + var(--grid-column-gutter) * 7);\n    \t}\n    }\n    \n    .media-spin-360__rotate-icon {\n    \tfill: #fff;\n    }\n    \n    /* experiment ITSMECOM-3605007 */     \n    li.layout-categories-category[data-categoryid=\"2547463\"] {\n        display: none;\n    }\n    \n    html[data-store=\"cn\"] .layout-footer__stores .layout-footer__item {\n    \tdisplay: none;\n    }\n    \n    /* beauty nail polish */\n    .product-grid-block[data-blockid=\"5ce3e611-7224-46f6-bf31-05ee0b310f14\"] .product-grid-block-product-extended-info__color-list,\n    .product-grid-block[data-blockid=\"a57506a0-5055-4006-ad38-2a92d185b27e\"] .product-grid-block-product-extended-info__color-list {\n    \tdisplay: none;\n    }\n    \n    @media screen and (min-width: 1024px) {\n        .product-page .product-theme--origins .product-detail-secondary-product-info,\n        .product-page .product-theme--origins .product-secondary-product__size-selector-toggle {\n            margin-top: 0;\n        }\n    }\n    \n    [dir] .product-detail-card-info__coming-soon-subscriber {\n        background: var(--color-background-base);\n        border: 1px solid var(--color-content-high);\n        color: var(--color-content-high);\n    }\n    \n    @media screen and (min-width: 768px) {\n    \t.home-page #slider-spot__universe_WOMAN .slider-spot-universe-collections {\n    \t\tdisplay: none;\n    \t}\n    }\n    \n    html[data-store='ww'] .geolocation-modal__button.zds-button--primary {\n    \tbackground-color: var(--color-background-base);\n    \tborder: 1px solid var(--color-content-high);\n    \tcolor: var(--color-content-high);\n    }\n    \n    html[data-store='ww'] .geolocation-modal__button.zds-button--primary:hover {\n    \tbackground-color: var(--color-background-base);\n    }\n    \n    html[data-store='ww'] .geolocation-modal__button.zds-button--secondary {\n    \tbackground-color: var(--color-background-contrast);\n    \tborder: 1px solid var(--color-content-inverse);\n    \tcolor: var(--color-content-inverse);\n    }\n    \n    /* Solve temporary problems in small devices in home newsletter slide */\n    @media screen and (max-height: 670px) and (max-width: 768px) {\n    \thtml[data-store=\"br\"] .home-page .home-footer__newsletter,\n    \thtml[data-store=\"it\"] .home-page .home-footer__newsletter {\n    \t\tmargin-top: var(--spacing-04);\n    \t}\t\n    \thtml[data-store=\"br\"] .home-page .home-footer__social-network,\n    \thtml[data-store=\"it\"] .home-page .home-footer__social-network {\n    \t\tmargin-bottom: 100px;\n     \t}\n    }\n\n    @media screen and (min-width: 768px) {\n        html[data-store=\"xp\"] .home-page .layout-search-link__link,\n        html[data-store=\"us\"] .home-page .layout-search-link__link {\n            background-color: transparent;\n            color: inherit;\n        }\n    }\n    \n    /* PATCH for order message */\n    .order-list-item__advice .zds-alert-banner__message {\n    \toverflow-wrap: break-word !important;\n    \tword-break: normal !important;\n    }\n    \n    html:lang(zh) .zds-theme,\n    html:lang(ja) .zds-theme,\n    html:lang(kr) .zds-theme,\n    html:lang(ru) .zds-theme,\n    html:lang(el) .zds-theme,\n    html:lang(bg) .zds-theme,\n    html:lang(mk) .zds-theme,\n    html:lang(ar) .zds-theme,\n    html:lang(uk) .zds-theme {\n        --font-family-main: 'Arial', Sans-Serif;\n        --font-weight-medium: bold;\n    }\n    \n    /* Allow home banner to grow based on content */\n    @media screen and (min-width: 768px) {\n\t    .home-page .slider-spot-banner__message .mk-spot {\n\t\t    width: auto;\n\t    }\n    }\n    \n    @media screen and (min-width: 768px) {\n\t\t@supports not selector(::-webkit-scrollbar) {\n\t\t\t.product-detail-extra-detail-expandable__expandable-text,\n\t\t\t.product-detail-additional-info__expandable-text,\n\t\t\t.layout-categories-category__subcategory-main,\n\t\t\t.add-to-cart-notification__wrapper {\n\t\t\t\tscrollbar-color: transparent transparent;\n\t\t\t\tscrollbar-width: thin;\n\t\t\t}\n\n\t\t\t.product-detail-extra-detail-expandable .expandable-text--expanded:hover,\n\t\t\t.product-detail-additional-info .expandable-text--expanded:hover,\n\t\t\t.layout-categories-category__subcategory-main:hover,\n\t\t\t.add-to-cart-notification__wrapper:hover {\n\t\t\t\tscrollbar-color: var(--color-content-high) var(--color-content-low);\n\t\t\t}\n\t\t}\n\t}\n    \n    html:lang(zh) .zds-theme {\n\t    -webkit-font-smoothing: auto;\n    }\n    \n    .product-grid-block-dynamic__container .product-grid-product__info-wrapper--overlapped {\n        bottom: var(--dynamic-product-media-padding-bottom, 0px) !important;\n    }\n    \n    /* Hide Origins siblings bar borders */\n    .theme--origins .category-topbar__nieces::before {\n\t    display: none !important;\n    }\n    .theme--origins .layout-header-std--background-opaque, .theme--origins .layout-header-mob--background-opaque {\n\t    outline: none;\n    }\n    \n    /* Fix Origins related categories font */\n    .theme--origins .category-topbar-related-categories__category .zds-nav-row__list-item-wrapper {\n        font-family: var(--font-family-origins);\n    }\n    \n    /* Safari: Fix layout header logo width */\n    .layout-header-logo svg {\n        width: var(--layout-header-logo-width);\n    }\n    \n    /* Logo height fix */\n    .layout-header-logo * {\n        height: 100%;\n    }\n    \n    /* Fix for layers in dark mode */\n    .zds-theme--dark .media-image__image:has(+ .media-image__svg--dark-mode-compatible) {\n        filter: invert(1);\n    }\n    \n    /* Fix SRPLS subscription button on mobile */\n    @media screen and (max-width: 768px) {\n        .srpls-newsletter__subscription-hint {\n            width: 100%;   \n        }\n    }\n    \n    /* Fix for SRPLS misalignment when a product is sold out */\n    @media screen and (min-width: 768px) {\n        .product-grid--is-srpls .product-grid-product-info__availability .product-grid-product-info__sold-out {\n            padding: var(--spacing-01);\n        }\n    }\n    \n    /* Detele SRPLS separation between sticky blocks */\n    @media screen and (min-width: 768px) {\n        .product-grid--is-srpls .product-grid-block-sticky {\n\t\t    margin-bottom: 0px !important;\n\t    }\n    }\n    \n\t@media screen and (min-width: 768px) {\n    \t.theme--origins:not(.home-page) .layout-header-actions {\n\t\t    grid-column: 5;\n\t\t    padding-top: 0;\n\t    }\n\t    \n\t    .layout-shop-header .layout-header-actions {\n\t\t    align-items: baseline;\n\t    }\n    }\n    \n    /* Fix notification button position */\n    @media screen and (max-width: 768px) {\n    \t[dir=ltr] .layout-header-action-account--bullet::after {\n\t\t    right: calc(-0.375rem + var(--spacing-03));\n\t    }\n    }\n    \n    /* Fix header mob height without actions */\n    .layout-header-mob__icon {\n        margin: 10px 0;\n    }\n    \n    /* Fix header on catalog with scroll  */\n    [dir=ltr] .layout-header-mob__wrapper {\n        overflow: hidden;\n    }\n    \n    /*Fix press witdth*/\n    @media screen and (max-width: 768px) {\n        #PRESS .layout-content {\n            max-width: none;\n        }\n    }\n    \n    /* Fix desktop safari home videos */\n    @media screen and (min-width: 768px) {\n    \t.slider-spot .media__wrapper--fit .media-video {\n    \t\tdisplay: block;\n    \t}\n    \n    \t.slider-spot .media__wrapper--fit .media-video .media-video__player {\n    \t\tjustify-self: center;\n    \t}\n    }\n    \n    /* Fix future price + onsale price + highlight price*/\n    .price--with-future-price .price__amount--on-sale.price-current--is-highlighted {\n        background-color: var(--color-background-contrast);\n    \tcolor: var(--color-content-inverse);\n    }\n    \n    /* Fix butterbear collection font and color */\n    .product-theme--butterbear .product-detail-actions__spot,\n    .product-theme--butterbear .product-detail-color-selector__selected-color-name {\n        color: var(--butterbear-text-color);\n\t    fill: var(--butterbear-text-color);\n\t    font-family: 'Cooper', 'Neue-Helvetica', 'Arial', Sans-Serif;\n    }\n    \n    /* Fix select input checkout */\n    .delivery-cell-date-shipping-options__option .zds-select-field__adorment {\n        transform: translateY(-100%);\n    }\n    \n    /* Fix search page results header */\n    @media screen and (min-width: 768px) {\n        .search-products-view__sections-filters > * {\n    \t\tflex: 0 1 auto !important;\n    \t}\n    }\n    \n    /* SDUI menu fixes */\n    .layout-categories-category-sdui .sdui-text {\n        font-family: var(--font-family-main) !important;\n    }\n    \n    html:not([data-store=\"cn\"]):not([data-store=\"hk\"]):not([data-store=\"mo\"]):not([data-store=\"tw\"]) .layout-categories-category-sdui .sdui-text {\n        color: inherit !important;\n    }\n    \n    /* Menu super index fix */\n    @media screen and (min-width: 64rem) {\n        .layout-categories-category-name__tag {\n            line-height: 0.75rem;\n            font-size: 0.5rem;\n            padding-top: 0.5rem;\n        }\n    }\n    \n    /* Avoid enigmatic scrolling issues in ancestor for Chrome and Safari in filters panel */\n    .products-category-page .filters__groups,\n    .search-products-page .filters__groups {\n        position: relative; \n    }\n    \n    /* Fixes for fifty-anniversary collection */\n    .product-detail-anniversary-std__fixed-panel > div:not(.price):not(.special-return-conditions__button) {\n        width: 100%;\n    }\n    \n    .product-detail-anniversary-std__fixed-panel > div:not(.price):not(.special-return-conditions__button) > button[data-qa-action=\"bundle-components-open\"],\n    .product-detail-anniversary-std__fixed-panel > div:not(.price):not(.special-return-conditions__button) > button[data-qa-action=\"direct-add-to-cart\"],\n    .product-detail-anniversary-bundle-components__product-actions > button[data-qa-action=\"bundle-components-open\"],\n    .product-detail-anniversary-bundle-components__product-actions > button[data-qa-action=\"direct-add-to-cart\"] {\n        display: block;\n        margin: 0 auto;\n    }\n    \n    .product-detail-anniversary-std__product-actions button.product-detail-actions__action-button[data-qa-action=\"show-return-conditions\"],\n    .product-detail-anniversary-card .product-detail-extra-detail__section .zds-accordion-item:nth-of-type(2) {\n        display: none;\n    }\n    .product-detail-anniversary-fixed-panel-purchase-actions-std__main-action .product-detail-show-similar-products {\n        pointer-events: none;\n    }\n    .product-detail-anniversary-fixed-panel-purchase-actions-std__main-action .product-detail-show-similar-products .zds-button__first-line {\n        display: none;\n    }\n    .product-detail-anniversary-std__fixed-panel .special-return-conditions__button,\n    .product-detail-anniversary-card__content .special-return-conditions__button {\n        text-transform: uppercase;\n        font-weight: bold;\n    }\n    \n    /**/\n    .native-app-banner__action.link {\n        color: var(--color-content-inverse);\n    }\n    \n    .product-grid-product-overlay__text {\n        text-align: center;\n    }\n    \n    /* Price messages for PDP should start a new line */\n    .product-detail-card-info__fixed-info-panel .price-messages,\n    .product-detail-info__price .price-messages { \n\t    flex-basis: 100%;\n    }\n\n    .product-detail-anniversary-std .mk-spot[data-name=\"ESpot_ProductPage_PromoWrap\"],\n    .product-detail-anniversary-card .mk-spot[data-name=\"ESpot_ProductPage_PromoWrap\"] {\n        display: none;\n    }\n</style>\n<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"https://static.zara.net/static/mkt/css/corporate/en_GB.css?1765065719000\">"
+            },
+            "key": "ESpot_LiveStyleSheet"
+        },
+        "ESpot_VirtualGiftCard_Preview": null,
+        "ESpot_ProductPage_SpecialReturnConditions": {
+            "type": "html",
+            "content": {
+                "content": "<div class=\"espot-content popup-product-info\">\r\n    <h1 class=\"popup-product-info-header\">SPECIAL TERMS AND CONDITIONS FOR RETURNS</h1>\r\n\r\n          <div class=\"return-methods\">\r\n\r\n            \r\n          \r\n              <p>Due to their special features, some of our items have to fulfil certain criteria to be returned:</p>\r\n              \r\n              <ul class='dashed-list'>\r\n\r\n                \r\n                  <li><strong>50CREATORS:</strong> Items in the 50CREATORS collection cannot be exchanged or returned due to their exclusive and limited nature. <br><br>Due to the exclusive and limited nature of this collection, the products offered are considered to be goods specially designed and manufactured for commemorative purposes, according to particular specifications and/or of a non-standard nature, therefore, the right of withdrawal does not apply to them. The provisions of these specific terms do not affect the legal rights of the consumer or user in the event of product non-conformity. <br><br>By confirming the purchase of an item from the 50CREATORS50PRODUCTS Limited Collection, the customer expressly acknowledges and accepts this term, waiving the right of withdrawal provided for in general consumer regulations.</li>\r\n                \r\n\r\n               \r\n                \r\n                \r\n                  <li><strong>Swimwear:</strong> must include the hygiene sticker.</li>\r\n                \r\n\r\n                \r\n                  <li><strong>Underwear:</strong></li>\r\n                    <ul id=\"lingerie\">\r\n                        <li id=\"lingerie\"><strong>Woman:</strong> underwear can be returned or exchanged as long as they are in the same condition as when they were purchased and still have the bag or protective sticker with which they were sent. </li>\r\n                        <li id=\"lingerie\"><strong>Man:</strong> underwear cannot be returned or exchanged.</li>\r\n                        <li id=\"lingerie\"><strong>Kids:</strong> underwear items cannot be returned or exchanged, except for socks, tights, tops, bodysuits and vests kept in their original packaging. </li>\r\n                    </ul>\r\n                \r\n\r\n                  <li><strong>Accessories:</strong> must be returned with the bag or the original cardboard packaging intact.</li>\r\n\r\n\r\n                  \r\n                    \r\n                      \r\n                        <li><strong>Fragrances and candles:</strong>  must be returned in the original sealed packaging.</li>\r\n                      \r\n                    \r\n                  \r\n\r\n                  \r\n\r\n                  \r\n                    \r\n                    \r\n                    <li><strong>Cosmetics: </strong>must be returned in the original sealed packaging and in original condition.&nbsp;Items from the Standard Procedure collection cannot be exchanged or returned.</li>\r\n                  \r\n\r\n                  \r\n\r\n                \r\n\r\n                \r\n                  <li>HOME items must be returned in their sealed original packaging and in its original condition.</li>\r\n                \r\n\r\n                <li><strong>Packs:</strong> items forming part of a pack cannot be returned separately.</li>\r\n\r\n\r\n                \r\n                  \r\n                     <li><strong>Special packaging and additional accessories:</strong> items with special packaging (fabric bags, special boxes, suit carriers, etc.) or additional accessories must be returned with said packaging or accessories in the same condition.</li>\r\n                  \r\n                \r\n\r\n                \r\n                  <li><strong>Magazines:</strong> They cannot be returned.</li>\r\n                \r\n\r\n                \r\n\r\n              </ul> \r\n\r\n              \r\n\r\n                \r\n\r\n            \r\n\r\n\r\n          </div>\r\n\r\n </div>"
+            },
+            "key": "ESpot_ProductPage_SpecialReturnConditions"
+        },
+        "ESpot_SocialNetwork_Footer": {
+            "type": "html",
+            "content": {
+                "content": "<ul id=\"homeSocialFooter\" class=\"zds-label-xs\">\r\n  <li>         <a href=\"https://www.tiktok.com/@zara\"           target=\"_blank\"           id=\"\"           class=\"\">Tiktok</a>       </li>\r\n  <li>         <a href=\"https://www.instagram.com/zara/\"           target=\"_blank\"           id=\"\"           class=\"\">Instagram</a>       </li>\r\n  <li>         <a href=\"https://www.facebook.com/Zara\"           target=\"_blank\"           id=\"\"           class=\"\">Facebook</a>       </li>\r\n  \r\n  \r\n  \r\n  <li>         <a href=\"https://es.pinterest.com/zaraofficial\"           target=\"_blank\"           id=\"\"           class=\"\">Pinterest</a>       </li>\r\n  \r\n  \r\n  \r\n  <li>         <a href=\"http://www.youtube.com/user/zara\"           target=\"_blank\"           id=\"\"           class=\"\">Youtube</a>       </li>\r\n  \r\n  <li>         <a href=\"https://open.spotify.com/user/r6ivwuv0ebk346hhxo446pbfv\"           target=\"_blank\"           id=\"\"           class=\"\">Spotify</a>       </li>\r\n</ul>"
+            },
+            "key": "ESpot_SocialNetwork_Footer"
+        }
+    },
+    "product": {
+        "id": 458083689,
+        "type": "Product",
+        "kind": "Other",
+        "state": "visible",
+        "brand": {
+            "brandId": 1,
+            "brandGroupId": 1,
+            "brandGroupCode": "zara"
+        },
+        "name": "RUNNING TRAINERS",
+        "detail": {
+            "reference": "15036610-I2025",
+            "displayReference": "5036/610",
+            "colors": [
+                {
+                    "id": "800",
+                    "hexCode": "#10151A",
+                    "productId": 458113705,
+                    "name": "Black",
+                    "reference": "C15036610800000-I2025",
+                    "stylingId": "0",
+                    "xmedia": [
+                        {
+                            "datatype": "xmedia",
+                            "set": 2,
+                            "type": "image",
+                            "kind": "full",
+                            "path": "/assets/public/ece1/d932/bffc4098901c/3094fecdc39d/15036610800-p",
+                            "name": "15036610800-p",
+                            "width": 2048,
+                            "height": 3072,
+                            "timestamp": "1757344354936",
+                            "allowedScreens": [
+                                "large",
+                                "small"
+                            ],
+                            "gravity": "top",
+                            "extraInfo": {
+                                "originalName": "p",
+                                "assetId": "ece1d932bffc4098901c3094fecdc39d",
+                                "deliveryUrl": "https://static.zara.net/assets/public/ece1/d932/bffc4098901c/3094fecdc39d/15036610800-p/15036610800-p.jpg?ts=1757344354936",
+                                "deliveryPath": "/assets/public/ece1/d932/bffc4098901c/3094fecdc39d/15036610800-p/15036610800-p.jpg?ts=1757344354936"
+                            },
+                            "url": "https://static.zara.net/assets/public/ece1/d932/bffc4098901c/3094fecdc39d/15036610800-p/15036610800-p.jpg?ts=1757344354936&w={width}",
+                            "metaUrl": "https://static.zara.net/assets/public/ece1/d932/bffc4098901c/3094fecdc39d/meta.json?ts=1757344354943",
+                            "order": 1
+                        },
+                        {
+                            "datatype": "xmedia",
+                            "set": 2,
+                            "type": "image",
+                            "kind": "other",
+                            "path": "/assets/public/1f64/5f4c/2d714ad49bb5/22d684a5a9b7/04424006803-000-a1",
+                            "name": "04424006803-000-a1",
+                            "width": 2048,
+                            "height": 3072,
+                            "timestamp": "1757521727929",
+                            "allowedScreens": [
+                                "small",
+                                "large"
+                            ],
+                            "gravity": "top",
+                            "extraInfo": {
+                                "originalName": "a1",
+                                "assetId": "1f645f4c2d714ad49bb522d684a5a9b7",
+                                "deliveryUrl": "https://static.zara.net/assets/public/1f64/5f4c/2d714ad49bb5/22d684a5a9b7/04424006803-000-a1/04424006803-000-a1.jpg?ts=1757521727929",
+                                "deliveryPath": "/assets/public/1f64/5f4c/2d714ad49bb5/22d684a5a9b7/04424006803-000-a1/04424006803-000-a1.jpg?ts=1757521727929"
+                            },
+                            "url": "https://static.zara.net/assets/public/1f64/5f4c/2d714ad49bb5/22d684a5a9b7/04424006803-000-a1/04424006803-000-a1.jpg?ts=1757521727929&w={width}",
+                            "metaUrl": "https://static.zara.net/assets/public/1f64/5f4c/2d714ad49bb5/22d684a5a9b7/meta.json?ts=1757521727937",
+                            "order": 2
+                        },
+                        {
+                            "datatype": "xmedia",
+                            "set": 2,
+                            "type": "image",
+                            "kind": "other",
+                            "path": "/assets/public/b1b4/d326/4eaa41c6ba56/416189d53424/04424006803-000-a3",
+                            "name": "04424006803-000-a3",
+                            "width": 2048,
+                            "height": 3072,
+                            "timestamp": "1757521712279",
+                            "allowedScreens": [
+                                "small",
+                                "large"
+                            ],
+                            "gravity": "top",
+                            "extraInfo": {
+                                "originalName": "a3",
+                                "assetId": "b1b4d3264eaa41c6ba56416189d53424",
+                                "deliveryUrl": "https://static.zara.net/assets/public/b1b4/d326/4eaa41c6ba56/416189d53424/04424006803-000-a3/04424006803-000-a3.jpg?ts=1757521712279",
+                                "deliveryPath": "/assets/public/b1b4/d326/4eaa41c6ba56/416189d53424/04424006803-000-a3/04424006803-000-a3.jpg?ts=1757521712279"
+                            },
+                            "url": "https://static.zara.net/assets/public/b1b4/d326/4eaa41c6ba56/416189d53424/04424006803-000-a3/04424006803-000-a3.jpg?ts=1757521712279&w={width}",
+                            "metaUrl": "https://static.zara.net/assets/public/b1b4/d326/4eaa41c6ba56/416189d53424/meta.json?ts=1757521712288",
+                            "order": 3
+                        },
+                        {
+                            "datatype": "xmedia",
+                            "set": 2,
+                            "type": "image",
+                            "kind": "plain",
+                            "path": "/assets/public/bd31/09c6/468a4b4d81dd/a812e2643ed5/15036610800-e1",
+                            "name": "15036610800-e1",
+                            "width": 2048,
+                            "height": 3072,
+                            "timestamp": "1758011304728",
+                            "allowedScreens": [
+                                "small",
+                                "large"
+                            ],
+                            "gravity": "top",
+                            "extraInfo": {
+                                "originalName": "e1",
+                                "assetId": "bd3109c6468a4b4d81dda812e2643ed5",
+                                "deliveryUrl": "https://static.zara.net/assets/public/bd31/09c6/468a4b4d81dd/a812e2643ed5/15036610800-e1/15036610800-e1.jpg?ts=1758011304728",
+                                "deliveryPath": "/assets/public/bd31/09c6/468a4b4d81dd/a812e2643ed5/15036610800-e1/15036610800-e1.jpg?ts=1758011304728"
+                            },
+                            "url": "https://static.zara.net/assets/public/bd31/09c6/468a4b4d81dd/a812e2643ed5/15036610800-e1/15036610800-e1.jpg?ts=1758011304728&w={width}",
+                            "metaUrl": "https://static.zara.net/assets/public/bd31/09c6/468a4b4d81dd/a812e2643ed5/meta.json?ts=1758011304734",
+                            "order": 4
+                        },
+                        {
+                            "datatype": "xmedia",
+                            "set": 2,
+                            "type": "image",
+                            "kind": "plain",
+                            "path": "/assets/public/e81c/87a2/71fb478c9017/790f34688a85/15036610800-e2",
+                            "name": "15036610800-e2",
+                            "width": 2048,
+                            "height": 3072,
+                            "timestamp": "1758011304743",
+                            "allowedScreens": [
+                                "small",
+                                "large"
+                            ],
+                            "gravity": "top",
+                            "extraInfo": {
+                                "originalName": "e2",
+                                "assetId": "e81c87a271fb478c9017790f34688a85",
+                                "deliveryUrl": "https://static.zara.net/assets/public/e81c/87a2/71fb478c9017/790f34688a85/15036610800-e2/15036610800-e2.jpg?ts=1758011304743",
+                                "deliveryPath": "/assets/public/e81c/87a2/71fb478c9017/790f34688a85/15036610800-e2/15036610800-e2.jpg?ts=1758011304743"
+                            },
+                            "url": "https://static.zara.net/assets/public/e81c/87a2/71fb478c9017/790f34688a85/15036610800-e2/15036610800-e2.jpg?ts=1758011304743&w={width}",
+                            "metaUrl": "https://static.zara.net/assets/public/e81c/87a2/71fb478c9017/790f34688a85/meta.json?ts=1758011304749",
+                            "order": 5
+                        },
+                        {
+                            "datatype": "xmedia",
+                            "set": 2,
+                            "type": "image",
+                            "kind": "plain",
+                            "path": "/assets/public/2453/8110/87d7425ebec3/73bde3d6caa8/15036610800-e3",
+                            "name": "15036610800-e3",
+                            "width": 2048,
+                            "height": 3071,
+                            "timestamp": "1758011304508",
+                            "allowedScreens": [
+                                "small",
+                                "large"
+                            ],
+                            "gravity": "top",
+                            "extraInfo": {
+                                "originalName": "e3",
+                                "assetId": "2453811087d7425ebec373bde3d6caa8",
+                                "deliveryUrl": "https://static.zara.net/assets/public/2453/8110/87d7425ebec3/73bde3d6caa8/15036610800-e3/15036610800-e3.jpg?ts=1758011304508",
+                                "deliveryPath": "/assets/public/2453/8110/87d7425ebec3/73bde3d6caa8/15036610800-e3/15036610800-e3.jpg?ts=1758011304508"
+                            },
+                            "url": "https://static.zara.net/assets/public/2453/8110/87d7425ebec3/73bde3d6caa8/15036610800-e3/15036610800-e3.jpg?ts=1758011304508&w={width}",
+                            "metaUrl": "https://static.zara.net/assets/public/2453/8110/87d7425ebec3/73bde3d6caa8/meta.json?ts=1758011304514",
+                            "order": 6
+                        },
+                        {
+                            "datatype": "xmedia",
+                            "set": 2,
+                            "type": "image",
+                            "kind": "plain",
+                            "path": "/assets/public/3cda/c78d/4e8e42de8ea5/6bf1556f6b5e/15036610800-e4",
+                            "name": "15036610800-e4",
+                            "width": 2048,
+                            "height": 3072,
+                            "timestamp": "1758011304710",
+                            "allowedScreens": [
+                                "small",
+                                "large"
+                            ],
+                            "gravity": "top",
+                            "extraInfo": {
+                                "originalName": "e4",
+                                "assetId": "3cdac78d4e8e42de8ea56bf1556f6b5e",
+                                "deliveryUrl": "https://static.zara.net/assets/public/3cda/c78d/4e8e42de8ea5/6bf1556f6b5e/15036610800-e4/15036610800-e4.jpg?ts=1758011304710",
+                                "deliveryPath": "/assets/public/3cda/c78d/4e8e42de8ea5/6bf1556f6b5e/15036610800-e4/15036610800-e4.jpg?ts=1758011304710"
+                            },
+                            "url": "https://static.zara.net/assets/public/3cda/c78d/4e8e42de8ea5/6bf1556f6b5e/15036610800-e4/15036610800-e4.jpg?ts=1758011304710&w={width}",
+                            "metaUrl": "https://static.zara.net/assets/public/3cda/c78d/4e8e42de8ea5/6bf1556f6b5e/meta.json?ts=1758011304716",
+                            "order": 7
+                        },
+                        {
+                            "datatype": "xmedia",
+                            "set": 2,
+                            "type": "image",
+                            "kind": "plain",
+                            "path": "/assets/public/4c77/4895/04d740ce82a7/54cd51ee5780/15036610800-e5",
+                            "name": "15036610800-e5",
+                            "width": 2048,
+                            "height": 3072,
+                            "timestamp": "1758011304852",
+                            "allowedScreens": [
+                                "small",
+                                "large"
+                            ],
+                            "gravity": "top",
+                            "extraInfo": {
+                                "originalName": "e5",
+                                "assetId": "4c77489504d740ce82a754cd51ee5780",
+                                "deliveryUrl": "https://static.zara.net/assets/public/4c77/4895/04d740ce82a7/54cd51ee5780/15036610800-e5/15036610800-e5.jpg?ts=1758011304852",
+                                "deliveryPath": "/assets/public/4c77/4895/04d740ce82a7/54cd51ee5780/15036610800-e5/15036610800-e5.jpg?ts=1758011304852"
+                            },
+                            "url": "https://static.zara.net/assets/public/4c77/4895/04d740ce82a7/54cd51ee5780/15036610800-e5/15036610800-e5.jpg?ts=1758011304852&w={width}",
+                            "metaUrl": "https://static.zara.net/assets/public/4c77/4895/04d740ce82a7/54cd51ee5780/meta.json?ts=1758011304865",
+                            "order": 8
+                        },
+                        {
+                            "datatype": "xmedia",
+                            "set": 2,
+                            "type": "3dadvanced",
+                            "kind": "plain",
+                            "path": "/assets/public/fd9c/2bde/b4e74ddb87ed/1dfb433fd6b6",
+                            "name": "",
+                            "width": 2160,
+                            "height": 3240,
+                            "timestamp": "1759143060891",
+                            "allowedScreens": [
+                                "small",
+                                "large"
+                            ],
+                            "gravity": "top",
+                            "extraInfo": {
+                                "originalName": "v",
+                                "assetId": "fd9c2bdeb4e74ddb87ed1dfb433fd6b6",
+                                "deliveryUrl": "https://static.zara.net/assets/public/fd9c/2bde/b4e74ddb87ed/1dfb433fd6b6/",
+                                "deliveryPath": "/assets/public/fd9c/2bde/b4e74ddb87ed/1dfb433fd6b6/"
+                            },
+                            "url": "https://static.zara.net/assets/public/fd9c/2bde/b4e74ddb87ed/1dfb433fd6b6/",
+                            "posterUrl": "https://static.zara.net/assets/public/fd9c/2bde/b4e74ddb87ed/1dfb433fd6b6/poster/poster.jpg?ts=1759143030510&w={width}",
+                            "order": 9
+                        }
+                    ],
+                    "shopcartMedia": [
+                        {
+                            "datatype": "xmedia",
+                            "set": 2,
+                            "type": "image",
+                            "kind": "plain",
+                            "path": "/assets/public/bd31/09c6/468a4b4d81dd/a812e2643ed5/15036610800-e1",
+                            "name": "15036610800-e1",
+                            "width": 2048,
+                            "height": 3072,
+                            "timestamp": "1758011304728",
+                            "allowedScreens": [
+                                "small",
+                                "large"
+                            ],
+                            "gravity": "top",
+                            "extraInfo": {
+                                "originalName": "e1",
+                                "assetId": "bd3109c6468a4b4d81dda812e2643ed5",
+                                "deliveryUrl": "https://static.zara.net/assets/public/bd31/09c6/468a4b4d81dd/a812e2643ed5/15036610800-e1/15036610800-e1.jpg?ts=1758011304728",
+                                "deliveryPath": "/assets/public/bd31/09c6/468a4b4d81dd/a812e2643ed5/15036610800-e1/15036610800-e1.jpg?ts=1758011304728"
+                            },
+                            "url": "https://static.zara.net/assets/public/bd31/09c6/468a4b4d81dd/a812e2643ed5/15036610800-e1/15036610800-e1.jpg?ts=1758011304728&w={width}",
+                            "metaUrl": "https://static.zara.net/assets/public/bd31/09c6/468a4b4d81dd/a812e2643ed5/meta.json?ts=1758011304734"
+                        }
+                    ],
+                    "resources": [
+                        {
+                            "resource": {
+                                "datatype": "xmedia",
+                                "set": 2,
+                                "type": "3dadvanced",
+                                "kind": "plain",
+                                "path": "/assets/public/fd9c/2bde/b4e74ddb87ed/1dfb433fd6b6",
+                                "name": "",
+                                "width": 2160,
+                                "height": 3240,
+                                "timestamp": "1759143060891",
+                                "allowedScreens": [
+                                    "small",
+                                    "large"
+                                ],
+                                "extraInfo": {
+                                    "originalName": "v",
+                                    "assetId": "fd9c2bdeb4e74ddb87ed1dfb433fd6b6",
+                                    "deliveryUrl": "https://static.zara.net/assets/public/fd9c/2bde/b4e74ddb87ed/1dfb433fd6b6/",
+                                    "deliveryPath": "/assets/public/fd9c/2bde/b4e74ddb87ed/1dfb433fd6b6/"
+                                },
+                                "url": "https://static.zara.net/assets/public/fd9c/2bde/b4e74ddb87ed/1dfb433fd6b6/",
+                                "posterUrl": "https://static.zara.net/assets/public/fd9c/2bde/b4e74ddb87ed/1dfb433fd6b6/poster/poster.jpg?ts=1759143030510&w={width}"
+                            },
+                            "extraInfo": {
+                                "isTryOnEnabled": true,
+                                "isAREnabled": true,
+                                "isMultiexperience3DEnabled": true
+                            },
+                            "datatype": "media"
+                        }
+                    ],
+                    "price": 3599,
+                    "sizes": [
+                        {
+                            "availability": "in_stock",
+                            "equivalentSizeId": 35,
+                            "id": 35,
+                            "name": "2",
+                            "price": 3599,
+                            "reference": "1503661080035-I2025",
+                            "sku": 458083692,
+                            "attributes": [
+                                {
+                                    "type": "Mark",
+                                    "identifier": "CONFECTION",
+                                    "name": "",
+                                    "values": [],
+                                    "properties": {}
+                                }
+                            ],
+                            "demand": "DEMAND_REGULAR"
+                        },
+                        {
+                            "availability": "in_stock",
+                            "equivalentSizeId": 36,
+                            "id": 36,
+                            "name": "3",
+                            "price": 3599,
+                            "reference": "1503661080036-I2025",
+                            "sku": 458083690,
+                            "attributes": [
+                                {
+                                    "type": "Mark",
+                                    "identifier": "CONFECTION",
+                                    "name": "",
+                                    "values": [],
+                                    "properties": {}
+                                }
+                            ],
+                            "demand": "DEMAND_REGULAR"
+                        },
+                        {
+                            "availability": "in_stock",
+                            "equivalentSizeId": 37,
+                            "id": 37,
+                            "name": "4",
+                            "price": 3599,
+                            "reference": "1503661080037-I2025",
+                            "sku": 458083691,
+                            "attributes": [
+                                {
+                                    "type": "Mark",
+                                    "identifier": "CONFECTION",
+                                    "name": "",
+                                    "values": [],
+                                    "properties": {}
+                                }
+                            ],
+                            "demand": "DEMAND_REGULAR"
+                        },
+                        {
+                            "availability": "in_stock",
+                            "equivalentSizeId": 38,
+                            "id": 38,
+                            "name": "5",
+                            "price": 3599,
+                            "reference": "1503661080038-I2025",
+                            "sku": 458083696,
+                            "attributes": [
+                                {
+                                    "type": "Mark",
+                                    "identifier": "CONFECTION",
+                                    "name": "",
+                                    "values": [],
+                                    "properties": {}
+                                }
+                            ],
+                            "demand": "DEMAND_REGULAR"
+                        },
+                        {
+                            "availability": "in_stock",
+                            "equivalentSizeId": 39,
+                            "id": 39,
+                            "name": "6",
+                            "price": 3599,
+                            "reference": "1503661080039-I2025",
+                            "sku": 458083697,
+                            "attributes": [
+                                {
+                                    "type": "Mark",
+                                    "identifier": "CONFECTION",
+                                    "name": "",
+                                    "values": [],
+                                    "properties": {}
+                                }
+                            ],
+                            "demand": "DEMAND_REGULAR"
+                        },
+                        {
+                            "availability": "in_stock",
+                            "equivalentSizeId": 40,
+                            "id": 40,
+                            "name": "7",
+                            "price": 3599,
+                            "reference": "1503661080040-I2025",
+                            "sku": 458083694,
+                            "attributes": [
+                                {
+                                    "type": "Mark",
+                                    "identifier": "CONFECTION",
+                                    "name": "",
+                                    "values": [],
+                                    "properties": {}
+                                }
+                            ],
+                            "demand": "DEMAND_REGULAR"
+                        },
+                        {
+                            "availability": "in_stock",
+                            "equivalentSizeId": 41,
+                            "id": 41,
+                            "name": "8",
+                            "price": 3599,
+                            "reference": "1503661080041-I2025",
+                            "sku": 458083695,
+                            "attributes": [
+                                {
+                                    "type": "Mark",
+                                    "identifier": "CONFECTION",
+                                    "name": "",
+                                    "values": [],
+                                    "properties": {}
+                                }
+                            ],
+                            "demand": "DEMAND_REGULAR"
+                        },
+                        {
+                            "availability": "in_stock",
+                            "equivalentSizeId": 42,
+                            "id": 42,
+                            "name": "9",
+                            "price": 3599,
+                            "reference": "1503661080042-I2025",
+                            "sku": 458083693,
+                            "attributes": [
+                                {
+                                    "type": "Mark",
+                                    "identifier": "CONFECTION",
+                                    "name": "",
+                                    "values": [],
+                                    "properties": {}
+                                }
+                            ],
+                            "demand": "DEMAND_REGULAR"
+                        }
+                    ],
+                    "description": "Running-style trainers. Padded detailing on the top. Textured sole. Lace-up fastening and tongue.\n\nSole height: 2 cm",
+                    "rawDescription": "Running-style trainers. Padded detailing on the top. Textured sole. Lace-up fastening and tongue.<br/><br/>Sole height: 2 cm",
+                    "extraInfo": {
+                        "isStockInStoresAvailable": true,
+                        "highlightPrice": false
+                    },
+                    "customizations": [],
+                    "tagTypes": [],
+                    "attributes": [
+                        {
+                            "type": "Smart_tag",
+                            "identifier": "TAG_SHOES_LAYERS_3_LAYERS",
+                            "name": "SHOES_LAYERS",
+                            "values": [],
+                            "properties": {
+                                "probability": "1.0",
+                                "source": "GROUP",
+                                "type": "LAYERS",
+                                "typeProbability": "1.0"
+                            }
+                        },
+                        {
+                            "type": "Smart_tag",
+                            "identifier": "TAG_BFSRA25_3_COLLECTION",
+                            "name": "Bfsra25",
+                            "values": [],
+                            "properties": {
+                                "probability": "1.0",
+                                "source": "GROUP",
+                                "type": "COLLECTION",
+                                "typeProbability": "1.0"
+                            }
+                        }
+                    ],
+                    "relations": [
+                        {
+                            "ids": [
+                                480181260,
+                                459159659,
+                                483075303,
+                                458132047
+                            ],
+                            "type": "PACMAN-LOOK"
+                        }
+                    ],
+                    "pricing": {
+                        "price": {
+                            "value": 3599,
+                            "currency": {
+                                "code": "GBP"
+                            }
+                        }
+                    },
+                    "mainImgs": [
+                        {
+                            "datatype": "xmedia",
+                            "set": 2,
+                            "type": "image",
+                            "kind": "full",
+                            "path": "/assets/public/ece1/d932/bffc4098901c/3094fecdc39d/15036610800-p",
+                            "name": "15036610800-p",
+                            "width": 2048,
+                            "height": 3072,
+                            "timestamp": "1757344354936",
+                            "allowedScreens": [
+                                "large",
+                                "small"
+                            ],
+                            "gravity": "top",
+                            "extraInfo": {
+                                "originalName": "p",
+                                "assetId": "ece1d932bffc4098901c3094fecdc39d",
+                                "deliveryUrl": "https://static.zara.net/assets/public/ece1/d932/bffc4098901c/3094fecdc39d/15036610800-p/15036610800-p.jpg?ts=1757344354936",
+                                "deliveryPath": "/assets/public/ece1/d932/bffc4098901c/3094fecdc39d/15036610800-p/15036610800-p.jpg?ts=1757344354936"
+                            },
+                            "url": "https://static.zara.net/assets/public/ece1/d932/bffc4098901c/3094fecdc39d/15036610800-p/15036610800-p.jpg?ts=1757344354936&w={width}",
+                            "metaUrl": "https://static.zara.net/assets/public/ece1/d932/bffc4098901c/3094fecdc39d/meta.json?ts=1757344354943",
+                            "order": 1
+                        },
+                        {
+                            "datatype": "xmedia",
+                            "set": 2,
+                            "type": "image",
+                            "kind": "other",
+                            "path": "/assets/public/1f64/5f4c/2d714ad49bb5/22d684a5a9b7/04424006803-000-a1",
+                            "name": "04424006803-000-a1",
+                            "width": 2048,
+                            "height": 3072,
+                            "timestamp": "1757521727929",
+                            "allowedScreens": [
+                                "small",
+                                "large"
+                            ],
+                            "gravity": "top",
+                            "extraInfo": {
+                                "originalName": "a1",
+                                "assetId": "1f645f4c2d714ad49bb522d684a5a9b7",
+                                "deliveryUrl": "https://static.zara.net/assets/public/1f64/5f4c/2d714ad49bb5/22d684a5a9b7/04424006803-000-a1/04424006803-000-a1.jpg?ts=1757521727929",
+                                "deliveryPath": "/assets/public/1f64/5f4c/2d714ad49bb5/22d684a5a9b7/04424006803-000-a1/04424006803-000-a1.jpg?ts=1757521727929"
+                            },
+                            "url": "https://static.zara.net/assets/public/1f64/5f4c/2d714ad49bb5/22d684a5a9b7/04424006803-000-a1/04424006803-000-a1.jpg?ts=1757521727929&w={width}",
+                            "metaUrl": "https://static.zara.net/assets/public/1f64/5f4c/2d714ad49bb5/22d684a5a9b7/meta.json?ts=1757521727937",
+                            "order": 2
+                        },
+                        {
+                            "datatype": "xmedia",
+                            "set": 2,
+                            "type": "image",
+                            "kind": "other",
+                            "path": "/assets/public/b1b4/d326/4eaa41c6ba56/416189d53424/04424006803-000-a3",
+                            "name": "04424006803-000-a3",
+                            "width": 2048,
+                            "height": 3072,
+                            "timestamp": "1757521712279",
+                            "allowedScreens": [
+                                "small",
+                                "large"
+                            ],
+                            "gravity": "top",
+                            "extraInfo": {
+                                "originalName": "a3",
+                                "assetId": "b1b4d3264eaa41c6ba56416189d53424",
+                                "deliveryUrl": "https://static.zara.net/assets/public/b1b4/d326/4eaa41c6ba56/416189d53424/04424006803-000-a3/04424006803-000-a3.jpg?ts=1757521712279",
+                                "deliveryPath": "/assets/public/b1b4/d326/4eaa41c6ba56/416189d53424/04424006803-000-a3/04424006803-000-a3.jpg?ts=1757521712279"
+                            },
+                            "url": "https://static.zara.net/assets/public/b1b4/d326/4eaa41c6ba56/416189d53424/04424006803-000-a3/04424006803-000-a3.jpg?ts=1757521712279&w={width}",
+                            "metaUrl": "https://static.zara.net/assets/public/b1b4/d326/4eaa41c6ba56/416189d53424/meta.json?ts=1757521712288",
+                            "order": 3
+                        },
+                        {
+                            "datatype": "xmedia",
+                            "set": 2,
+                            "type": "image",
+                            "kind": "plain",
+                            "path": "/assets/public/bd31/09c6/468a4b4d81dd/a812e2643ed5/15036610800-e1",
+                            "name": "15036610800-e1",
+                            "width": 2048,
+                            "height": 3072,
+                            "timestamp": "1758011304728",
+                            "allowedScreens": [
+                                "small",
+                                "large"
+                            ],
+                            "gravity": "top",
+                            "extraInfo": {
+                                "originalName": "e1",
+                                "assetId": "bd3109c6468a4b4d81dda812e2643ed5",
+                                "deliveryUrl": "https://static.zara.net/assets/public/bd31/09c6/468a4b4d81dd/a812e2643ed5/15036610800-e1/15036610800-e1.jpg?ts=1758011304728",
+                                "deliveryPath": "/assets/public/bd31/09c6/468a4b4d81dd/a812e2643ed5/15036610800-e1/15036610800-e1.jpg?ts=1758011304728"
+                            },
+                            "url": "https://static.zara.net/assets/public/bd31/09c6/468a4b4d81dd/a812e2643ed5/15036610800-e1/15036610800-e1.jpg?ts=1758011304728&w={width}",
+                            "metaUrl": "https://static.zara.net/assets/public/bd31/09c6/468a4b4d81dd/a812e2643ed5/meta.json?ts=1758011304734",
+                            "order": 4
+                        },
+                        {
+                            "datatype": "xmedia",
+                            "set": 2,
+                            "type": "image",
+                            "kind": "plain",
+                            "path": "/assets/public/e81c/87a2/71fb478c9017/790f34688a85/15036610800-e2",
+                            "name": "15036610800-e2",
+                            "width": 2048,
+                            "height": 3072,
+                            "timestamp": "1758011304743",
+                            "allowedScreens": [
+                                "small",
+                                "large"
+                            ],
+                            "gravity": "top",
+                            "extraInfo": {
+                                "originalName": "e2",
+                                "assetId": "e81c87a271fb478c9017790f34688a85",
+                                "deliveryUrl": "https://static.zara.net/assets/public/e81c/87a2/71fb478c9017/790f34688a85/15036610800-e2/15036610800-e2.jpg?ts=1758011304743",
+                                "deliveryPath": "/assets/public/e81c/87a2/71fb478c9017/790f34688a85/15036610800-e2/15036610800-e2.jpg?ts=1758011304743"
+                            },
+                            "url": "https://static.zara.net/assets/public/e81c/87a2/71fb478c9017/790f34688a85/15036610800-e2/15036610800-e2.jpg?ts=1758011304743&w={width}",
+                            "metaUrl": "https://static.zara.net/assets/public/e81c/87a2/71fb478c9017/790f34688a85/meta.json?ts=1758011304749",
+                            "order": 5
+                        },
+                        {
+                            "datatype": "xmedia",
+                            "set": 2,
+                            "type": "image",
+                            "kind": "plain",
+                            "path": "/assets/public/2453/8110/87d7425ebec3/73bde3d6caa8/15036610800-e3",
+                            "name": "15036610800-e3",
+                            "width": 2048,
+                            "height": 3071,
+                            "timestamp": "1758011304508",
+                            "allowedScreens": [
+                                "small",
+                                "large"
+                            ],
+                            "gravity": "top",
+                            "extraInfo": {
+                                "originalName": "e3",
+                                "assetId": "2453811087d7425ebec373bde3d6caa8",
+                                "deliveryUrl": "https://static.zara.net/assets/public/2453/8110/87d7425ebec3/73bde3d6caa8/15036610800-e3/15036610800-e3.jpg?ts=1758011304508",
+                                "deliveryPath": "/assets/public/2453/8110/87d7425ebec3/73bde3d6caa8/15036610800-e3/15036610800-e3.jpg?ts=1758011304508"
+                            },
+                            "url": "https://static.zara.net/assets/public/2453/8110/87d7425ebec3/73bde3d6caa8/15036610800-e3/15036610800-e3.jpg?ts=1758011304508&w={width}",
+                            "metaUrl": "https://static.zara.net/assets/public/2453/8110/87d7425ebec3/73bde3d6caa8/meta.json?ts=1758011304514",
+                            "order": 6
+                        },
+                        {
+                            "datatype": "xmedia",
+                            "set": 2,
+                            "type": "image",
+                            "kind": "plain",
+                            "path": "/assets/public/3cda/c78d/4e8e42de8ea5/6bf1556f6b5e/15036610800-e4",
+                            "name": "15036610800-e4",
+                            "width": 2048,
+                            "height": 3072,
+                            "timestamp": "1758011304710",
+                            "allowedScreens": [
+                                "small",
+                                "large"
+                            ],
+                            "gravity": "top",
+                            "extraInfo": {
+                                "originalName": "e4",
+                                "assetId": "3cdac78d4e8e42de8ea56bf1556f6b5e",
+                                "deliveryUrl": "https://static.zara.net/assets/public/3cda/c78d/4e8e42de8ea5/6bf1556f6b5e/15036610800-e4/15036610800-e4.jpg?ts=1758011304710",
+                                "deliveryPath": "/assets/public/3cda/c78d/4e8e42de8ea5/6bf1556f6b5e/15036610800-e4/15036610800-e4.jpg?ts=1758011304710"
+                            },
+                            "url": "https://static.zara.net/assets/public/3cda/c78d/4e8e42de8ea5/6bf1556f6b5e/15036610800-e4/15036610800-e4.jpg?ts=1758011304710&w={width}",
+                            "metaUrl": "https://static.zara.net/assets/public/3cda/c78d/4e8e42de8ea5/6bf1556f6b5e/meta.json?ts=1758011304716",
+                            "order": 7
+                        },
+                        {
+                            "datatype": "xmedia",
+                            "set": 2,
+                            "type": "image",
+                            "kind": "plain",
+                            "path": "/assets/public/4c77/4895/04d740ce82a7/54cd51ee5780/15036610800-e5",
+                            "name": "15036610800-e5",
+                            "width": 2048,
+                            "height": 3072,
+                            "timestamp": "1758011304852",
+                            "allowedScreens": [
+                                "small",
+                                "large"
+                            ],
+                            "gravity": "top",
+                            "extraInfo": {
+                                "originalName": "e5",
+                                "assetId": "4c77489504d740ce82a754cd51ee5780",
+                                "deliveryUrl": "https://static.zara.net/assets/public/4c77/4895/04d740ce82a7/54cd51ee5780/15036610800-e5/15036610800-e5.jpg?ts=1758011304852",
+                                "deliveryPath": "/assets/public/4c77/4895/04d740ce82a7/54cd51ee5780/15036610800-e5/15036610800-e5.jpg?ts=1758011304852"
+                            },
+                            "url": "https://static.zara.net/assets/public/4c77/4895/04d740ce82a7/54cd51ee5780/15036610800-e5/15036610800-e5.jpg?ts=1758011304852&w={width}",
+                            "metaUrl": "https://static.zara.net/assets/public/4c77/4895/04d740ce82a7/54cd51ee5780/meta.json?ts=1758011304865",
+                            "order": 8
+                        },
+                        {
+                            "datatype": "xmedia",
+                            "set": 2,
+                            "type": "3dadvanced",
+                            "kind": "plain",
+                            "path": "/assets/public/fd9c/2bde/b4e74ddb87ed/1dfb433fd6b6",
+                            "name": "",
+                            "width": 2160,
+                            "height": 3240,
+                            "timestamp": "1759143060891",
+                            "allowedScreens": [
+                                "small",
+                                "large"
+                            ],
+                            "gravity": "top",
+                            "extraInfo": {
+                                "originalName": "v",
+                                "assetId": "fd9c2bdeb4e74ddb87ed1dfb433fd6b6",
+                                "deliveryUrl": "https://static.zara.net/assets/public/fd9c/2bde/b4e74ddb87ed/1dfb433fd6b6/",
+                                "deliveryPath": "/assets/public/fd9c/2bde/b4e74ddb87ed/1dfb433fd6b6/"
+                            },
+                            "url": "https://static.zara.net/assets/public/fd9c/2bde/b4e74ddb87ed/1dfb433fd6b6/",
+                            "posterUrl": "https://static.zara.net/assets/public/fd9c/2bde/b4e74ddb87ed/1dfb433fd6b6/poster/poster.jpg?ts=1759143030510&w={width}",
+                            "order": 9
+                        }
+                    ],
+                    "priceUnavailable": false
+                }
+            ],
+            "colorSelectorLabel": "Colour",
+            "detailedComposition": {
+                "parts": [
+                    {
+                        "description": "UPPER",
+                        "areas": [],
+                        "components": [
+                            {
+                                "material": "polyurethane",
+                                "percentage": "100%"
+                            }
+                        ],
+                        "microcontents": [],
+                        "reinforcements": []
+                    },
+                    {
+                        "description": "LINING",
+                        "areas": [],
+                        "components": [
+                            {
+                                "material": "polyester",
+                                "percentage": "50%"
+                            },
+                            {
+                                "material": "polyamide",
+                                "percentage": "32%"
+                            },
+                            {
+                                "material": "polyurethane",
+                                "percentage": "10%"
+                            },
+                            {
+                                "material": "elastane",
+                                "percentage": "8%"
+                            }
+                        ],
+                        "microcontents": [],
+                        "reinforcements": []
+                    },
+                    {
+                        "description": "SOLE",
+                        "areas": [],
+                        "components": [
+                            {
+                                "material": "sbs",
+                                "percentage": "100%"
+                            }
+                        ],
+                        "microcontents": [],
+                        "reinforcements": []
+                    },
+                    {
+                        "description": "INSOLE",
+                        "areas": [],
+                        "components": [
+                            {
+                                "material": "polyamide",
+                                "percentage": "85%"
+                            },
+                            {
+                                "material": "elastane",
+                                "percentage": "15%"
+                            }
+                        ],
+                        "microcontents": [],
+                        "reinforcements": []
+                    },
+                    {
+                        "description": "TONGUE",
+                        "areas": [],
+                        "components": [
+                            {
+                                "material": "polyurethane",
+                                "percentage": "100%"
+                            }
+                        ],
+                        "microcontents": [],
+                        "reinforcements": []
+                    }
+                ],
+                "exceptions": []
+            },
+            "relatedProducts": []
+        },
+        "section": 1,
+        "sectionName": "WOMAN",
+        "familyId": 3787,
+        "familyName": "RUNNING",
+        "subfamilyId": 10008,
+        "subfamilyName": "Z1B:DEPORTIVO",
+        "extraInfo": {
+            "isSizeRecommender": true,
+            "hasSpecialReturnConditions": false,
+            "isNonReturnable": false,
+            "hasInteractiveSizeGuide": true,
+            "extraDetailTitle": "Composition, care & origin",
+            "isBracketingRestricted": true,
+            "hasTipsOnExtraDetail": true,
+            "highlightPrice": false,
+            "isVirtualTryOnSupported": false
+        },
+        "seo": {
+            "keyword": "running-trainers",
+            "description": "Running-style trainers. Padded detailing on the top. Textured sole. Lace-up fastening and tongue.<br/><br/>Sole height: 2 cm",
+            "breadCrumb": [
+                {
+                    "text": "RUNNING TRAINERS",
+                    "id": 0
+                }
+            ],
+            "seoProductId": "15036610",
+            "discernProductId": 458113705,
+            "keyWordI18n": [
+                {
+                    "langId": -1,
+                    "keyword": "running-trainers"
+                }
+            ]
+        },
+        "firstVisibleDate": "2025-09-11T02:00:00Z",
+        "attributes": [],
+        "sizeGuide": {
+            "enabled": true
+        },
+        "sizeSystem": "12724",
+        "xmedia": [],
+        "productTag": []
+    },
+    "showNativeAppBanner": true,
+    "productMetaData": [
+        {
+            "sku": "458113705-800-35",
+            "name": "RUNNING TRAINERS",
+            "brand": "ZARA",
+            "description": "Running-style trainers. Padded detailing on the top. Textured sole. Lace-up fastening and tongue.\n\nSole height: 2 cm",
+            "price": 35.99,
+            "availability": "in_stock",
+            "url": "https://www.zara.com/uk/en/running-trainers-p15036610.html",
+            "sizeName": "2",
+            "colorName": "Black"
+        },
+        {
+            "sku": "458113705-800-36",
+            "name": "RUNNING TRAINERS",
+            "brand": "ZARA",
+            "description": "Running-style trainers. Padded detailing on the top. Textured sole. Lace-up fastening and tongue.\n\nSole height: 2 cm",
+            "price": 35.99,
+            "availability": "in_stock",
+            "url": "https://www.zara.com/uk/en/running-trainers-p15036610.html",
+            "sizeName": "3",
+            "colorName": "Black"
+        },
+        {
+            "sku": "458113705-800-37",
+            "name": "RUNNING TRAINERS",
+            "brand": "ZARA",
+            "description": "Running-style trainers. Padded detailing on the top. Textured sole. Lace-up fastening and tongue.\n\nSole height: 2 cm",
+            "price": 35.99,
+            "availability": "in_stock",
+            "url": "https://www.zara.com/uk/en/running-trainers-p15036610.html",
+            "sizeName": "4",
+            "colorName": "Black"
+        },
+        {
+            "sku": "458113705-800-38",
+            "name": "RUNNING TRAINERS",
+            "brand": "ZARA",
+            "description": "Running-style trainers. Padded detailing on the top. Textured sole. Lace-up fastening and tongue.\n\nSole height: 2 cm",
+            "price": 35.99,
+            "availability": "in_stock",
+            "url": "https://www.zara.com/uk/en/running-trainers-p15036610.html",
+            "sizeName": "5",
+            "colorName": "Black"
+        },
+        {
+            "sku": "458113705-800-39",
+            "name": "RUNNING TRAINERS",
+            "brand": "ZARA",
+            "description": "Running-style trainers. Padded detailing on the top. Textured sole. Lace-up fastening and tongue.\n\nSole height: 2 cm",
+            "price": 35.99,
+            "availability": "in_stock",
+            "url": "https://www.zara.com/uk/en/running-trainers-p15036610.html",
+            "sizeName": "6",
+            "colorName": "Black"
+        },
+        {
+            "sku": "458113705-800-40",
+            "name": "RUNNING TRAINERS",
+            "brand": "ZARA",
+            "description": "Running-style trainers. Padded detailing on the top. Textured sole. Lace-up fastening and tongue.\n\nSole height: 2 cm",
+            "price": 35.99,
+            "availability": "in_stock",
+            "url": "https://www.zara.com/uk/en/running-trainers-p15036610.html",
+            "sizeName": "7",
+            "colorName": "Black"
+        },
+        {
+            "sku": "458113705-800-41",
+            "name": "RUNNING TRAINERS",
+            "brand": "ZARA",
+            "description": "Running-style trainers. Padded detailing on the top. Textured sole. Lace-up fastening and tongue.\n\nSole height: 2 cm",
+            "price": 35.99,
+            "availability": "in_stock",
+            "url": "https://www.zara.com/uk/en/running-trainers-p15036610.html",
+            "sizeName": "8",
+            "colorName": "Black"
+        },
+        {
+            "sku": "458113705-800-42",
+            "name": "RUNNING TRAINERS",
+            "brand": "ZARA",
+            "description": "Running-style trainers. Padded detailing on the top. Textured sole. Lace-up fastening and tongue.\n\nSole height: 2 cm",
+            "price": 35.99,
+            "availability": "in_stock",
+            "url": "https://www.zara.com/uk/en/running-trainers-p15036610.html",
+            "sizeName": "9",
+            "colorName": "Black"
+        }
+    ],
+    "parentId": 458113705,
+    "category": {},
+    "categories": [],
+    "keyWordI18n": [
+        {
+            "langId": -1,
+            "keyword": "running-trainers"
+        }
+    ],
+    "docInfo": {
+        "lastModified": "2025-12-07T19:11:02Z",
+        "title": "RUNNING TRAINERS - Black | ZARA United Kingdom",
+        "description": "Running-style trainers. Padded detailing on the top. Textured sole. Lace-up fastening and tongue.\n\nSole height: 2 cm",
+        "keywords": "",
+        "pageId": "product-458083689",
+        "seoAttributes": "itemscope itemtype=\"https://schema.org/WebPage\"",
+        "relData": {
+            "canonicalUrl": "https://www.zara.com/uk/en/running-trainers-p15036610.html",
+            "alternatesData": [
+                {
+                    "lang": "en-gb",
+                    "href": "https://www.zara.com/uk/en/running-trainers-p15036610.html"
+                }
+            ]
+        },
+        "htmlAttributes": {
+            "data-disableoverscroll": "true"
+        }
+    },
+    "breadCrumbs": [
+        {
+            "text": "RUNNING TRAINERS",
+            "id": 0
+        }
+    ],
+    "analyticsData": {
+        "appVersion": "7.21.2",
+        "pageType": "PRODUCT_DETAILS",
+        "page": {
+            "language": "en",
+            "shop": "GB",
+            "currency": "GBP"
+        },
+        "trackerUA": "UA-18083935-1",
+        "anonymizeIp": "0",
+        "hostname": "web-pc.zara.com",
+        "categoryName": "",
+        "colorCode": "800",
+        "mainPrice": 35.99,
+        "colorRef": "C15036610800000-I2025",
+        "productId": 458083689,
+        "productRef": "15036610-I2025",
+        "productName": "RUNNING TRAINERS",
+        "section": "WOMAN",
+        "stylingId": "0",
+        "family": "RUNNING",
+        "subfamily": "Z1B:DEPORTIVO",
+        "catentryId": 458113705,
+        "brand": 1,
+        "lowOnStockProduct": false
+    },
+    "mobileApp": {
+        "msg": "Do you want to open this product in Zara app?",
+        "iOSUri": "zara:///1/products?partNumber=15036610800",
+        "androidUri": "intent:///1/products?partNumber=15036610800#Intent;scheme=zara;package=com.inditex.zara;end"
+    },
+    "isSharedProduct": false,
+    "giftCardExpirationMonths": 36,
+    "sections": [
+        {
+            "id": 1,
+            "name": "WOMAN",
+            "description": "Woman",
+            "availableFor": [
+                "newsletter_section",
+                "newsletter",
+                "product_search"
+            ],
+            "engDescription": "Woman"
+        },
+        {
+            "id": 2,
+            "name": "MAN",
+            "description": "Man",
+            "availableFor": [
+                "newsletter_section",
+                "newsletter",
+                "product_search"
+            ],
+            "engDescription": "Man"
+        },
+        {
+            "id": 3,
+            "name": "KID",
+            "description": "Kids",
+            "availableFor": [
+                "newsletter_section",
+                "newsletter",
+                "product_search"
+            ],
+            "engDescription": "Kids"
+        },
+        {
+            "id": 4,
+            "name": "HOME",
+            "description": "Home",
+            "availableFor": [
+                "newsletter_section",
+                "newsletter",
+                "product_search"
+            ],
+            "engDescription": "Home"
+        },
+        {
+            "id": 5,
+            "name": "SRPLS",
+            "description": "SRPLS",
+            "availableFor": [
+                "newsletter_collection",
+                "srpls_category"
+            ],
+            "engDescription": "SRPLS"
+        },
+        {
+            "id": 6,
+            "name": "BEAUTY",
+            "description": "Beauty",
+            "availableFor": [
+                "newsletter_section",
+                "newsletter"
+            ],
+            "engDescription": "Beauty"
+        }
+    ],
+    "isRgpdEnabled": true,
+    "workgroups": [],
+    "chatView": null,
+    "viewName": "catalog/product-detail/product-detail",
+    "userKind": "guest",
+    "clientAppConfig": {
+        "appAssetsBasePath": "stdstatic",
+        "clientSideNavigationTimeout": 30000,
+        "env": "production",
+        "WCSApi": {
+            "baseUrl": "itxrest",
+            "defaultVersion": "1"
+        },
+        "storeFrontApi": {
+            "baseUrl": "api/storefront",
+            "defaultVersion": 1,
+            "clientId": "web-za"
+        },
+        "wechatAppId": "wxd95a72c5f595b6a3",
+        "appLinks": {
+            "ios": "https://itunes.apple.com/app/id547951480?mt=8",
+            "android": "https://play.google.com/store/apps/details?id=com.inditex.zara"
+        },
+        "channel": "web",
+        "cookiesConsent": {
+            "isEnabled": true,
+            "oneTrustId": "cadb9218-57dc-4d9d-88e2-9f60895ffd8e"
+        },
+        "formatterConfig": {
+            "currency": "GBP",
+            "symbol": "GBP",
+            "currencyFormat": "#,##0.00 \u00a4\u00a4",
+            "currencyDecimals": -2,
+            "currencyCode": "GBP",
+            "currencySymbol": "GBP",
+            "currencyRateToEuro": 1.14586914,
+            "formats": {
+                "number": {
+                    "decimalSeparator": ".",
+                    "thousandsSeparator": ","
+                },
+                "date": {
+                    "shortDate": "D/M/YYYY",
+                    "longDate": "D/M/YYYY HH:mm"
+                }
+            }
+        },
+        "formatterConfigByCur": {
+            "GBP": {
+                "currency": "GBP",
+                "symbol": "GBP",
+                "currencyFormat": "#,##0.00 \u00a4\u00a4",
+                "currencyDecimals": -2,
+                "currencyCode": "GBP",
+                "currencySymbol": "GBP",
+                "currencyRateToEuro": 1.14586914,
+                "formats": {
+                    "number": {
+                        "decimalSeparator": ".",
+                        "thousandsSeparator": ","
+                    },
+                    "date": {
+                        "shortDate": "D/M/YYYY",
+                        "longDate": "D/M/YYYY HH:mm"
+                    }
+                }
+            }
+        },
+        "geo": {
+            "baiduMapBaseUrl": "https://api.map.baidu.com/api?v=3.0&ak=FxyFDqzMy9R6ba4vbWlD1Ijr&callback={callback}&s=1",
+            "baiduMapGPSTranslationUrl": "https://api.map.baidu.com/geoconv/v1/?coords={coords}&from={originalLocationCode}&to={destinationLocationCode}&ak=FxyFDqzMy9R6ba4vbWlD1Ijr&callback={callback}",
+            "openMapCoordinatesUrl": "https://maps.google.com/?q={lat},{lng}",
+            "googleMapsPlaceUrl": "https://www.google.com/maps/search/?api=1&query={lat},{lng}&query_place_id={placeId}",
+            "mapsService": "gmaps",
+            "gmaps": {
+                "user": "gme-itxecommerceireland",
+                "key": "ABQIAAAAuLM0t2_kkFjBTv19NCnv4xQ1eARysJDSA6Rsmys1__vV4q3ogRSAPpMJQEtE6PZS8bUt68TqwWpmdA",
+                "channel": "Zara",
+                "isAddressAutocompleteActive": true,
+                "autocompleteKey": "gme-itxecommerceireland"
+            }
+        },
+        "imageBaseUrl": "https://static.zara.net/photos/",
+        "isDevEnv": false,
+        "isOpenProductPageInNewTab": false,
+        "isSsl": false,
+        "langCode": "en",
+        "langId": -1,
+        "locale": "en_GB@GB",
+        "languageTag": "en-GB",
+        "originalUrl": "/uk/en/running-trainers-p15036610.html?v1=458113705&productIds=490754812&productIds=472926659&ajax=true",
+        "requestWebpResources": false,
+        "useXmedia3dAdvancedConsumerUrl": true,
+        "sem": {
+            "exelution": {
+                "enabled": false
+            }
+        },
+        "storeCode": "uk",
+        "storeCountryCode": "gb",
+        "storeId": 10706,
+        "universalLinks": {
+            "ios": "download-app/ios",
+            "android": "download-app/android",
+            "unknown": "download-app"
+        },
+        "version": "7.21.2",
+        "videoBaseUrl": "https://static.zara.net/video/",
+        "xmediaFormats": [
+            {
+                "datatype": "xmediaFormat",
+                "id": 12,
+                "set": 2,
+                "type": "png",
+                "name": "PNG",
+                "description": "Imagen transparente",
+                "codecs": "png",
+                "extension": "png",
+                "width": 800,
+                "isSeoRelevant": false
+            },
+            {
+                "datatype": "xmediaFormat",
+                "id": 19,
+                "set": 2,
+                "type": "video",
+                "name": "MPEG4_MEGAZOOM",
+                "description": "Video MPEG4 Megazoom",
+                "codecs": "avc1.4d401f",
+                "extension": "mp4",
+                "width": 1920,
+                "isSeoRelevant": false
+            },
+            {
+                "datatype": "xmediaFormat",
+                "id": 20,
+                "set": 2,
+                "type": "video",
+                "name": "MPEG4_ZOOM",
+                "description": "Video MPEG4 Zoom",
+                "codecs": "avc1.4d401f",
+                "extension": "mp4",
+                "width": 560,
+                "isSeoRelevant": false
+            },
+            {
+                "datatype": "xmediaFormat",
+                "id": 21,
+                "set": 2,
+                "type": "video",
+                "name": "MPEG4_DETAIL",
+                "description": "Video MPEG4 Detail",
+                "codecs": "avc1.4d401f",
+                "extension": "mp4",
+                "width": 400,
+                "isSeoRelevant": false
+            },
+            {
+                "datatype": "xmediaFormat",
+                "id": 22,
+                "set": 2,
+                "type": "video",
+                "name": "MPEG4_STANDARD2",
+                "description": "Video MPEG4 Standard 2",
+                "codecs": "avc1.4d401f",
+                "extension": "mp4",
+                "width": 200,
+                "isSeoRelevant": false
+            },
+            {
+                "datatype": "xmediaFormat",
+                "id": 23,
+                "set": 2,
+                "type": "video",
+                "name": "MPEG4_THUMB",
+                "description": "Video MPEG4 Thumb",
+                "codecs": "avc1.4d401f",
+                "extension": "mp4",
+                "width": 135,
+                "isSeoRelevant": false
+            },
+            {
+                "datatype": "xmediaFormat",
+                "id": 24,
+                "set": 2,
+                "type": "video",
+                "name": "MPEG4_MOBILE",
+                "description": "Video MPEG4 Mobile",
+                "codecs": "avc1.4d401f",
+                "extension": "mp4",
+                "width": 1024,
+                "isSeoRelevant": false
+            },
+            {
+                "datatype": "xmediaFormat",
+                "id": 25,
+                "set": 2,
+                "type": "vector",
+                "name": "VECTOR_SVG",
+                "description": "Imagen vectorial svg",
+                "codecs": "svg",
+                "extension": "svg",
+                "width": 800,
+                "isSeoRelevant": false
+            },
+            {
+                "datatype": "xmediaFormat",
+                "id": 26,
+                "set": 2,
+                "type": "vector",
+                "name": "VECTOR_PDF",
+                "description": "Imagen vectorial pdf",
+                "codecs": "pdf",
+                "extension": "pdf",
+                "width": 800,
+                "isSeoRelevant": false
+            },
+            {
+                "datatype": "xmediaFormat",
+                "id": 27,
+                "set": 2,
+                "type": "hls",
+                "name": "HLS_VIDEO",
+                "description": "Video HLS",
+                "codecs": "H264",
+                "extension": "m3u8",
+                "width": 1920,
+                "isSeoRelevant": false
+            },
+            {
+                "datatype": "xmediaFormat",
+                "id": 28,
+                "set": 2,
+                "type": "image",
+                "name": "2400p",
+                "description": "2400p",
+                "codecs": "JPEG",
+                "extension": "jpg",
+                "width": 2400,
+                "isSeoRelevant": false
+            },
+            {
+                "datatype": "xmediaFormat",
+                "id": 29,
+                "set": 2,
+                "type": "image",
+                "name": "1920p",
+                "description": "1920p",
+                "codecs": "JPEG",
+                "extension": "jpg",
+                "width": 1900,
+                "isSeoRelevant": false
+            },
+            {
+                "datatype": "xmediaFormat",
+                "id": 30,
+                "set": 2,
+                "type": "image",
+                "name": "1440p",
+                "description": "1440p",
+                "codecs": "JPEG",
+                "extension": "jpg",
+                "width": 1440,
+                "isSeoRelevant": false
+            },
+            {
+                "datatype": "xmediaFormat",
+                "id": 31,
+                "set": 2,
+                "type": "image",
+                "name": "1280p",
+                "description": "1280p",
+                "codecs": "JPEG",
+                "extension": "jpg",
+                "width": 1280,
+                "isSeoRelevant": false
+            },
+            {
+                "datatype": "xmediaFormat",
+                "id": 32,
+                "set": 2,
+                "type": "image",
+                "name": "1125p",
+                "description": "1125\u200bp",
+                "codecs": "JPEG",
+                "extension": "jpg",
+                "width": 1125,
+                "isSeoRelevant": false
+            },
+            {
+                "datatype": "xmediaFormat",
+                "id": 33,
+                "set": 2,
+                "type": "image",
+                "name": "1024p",
+                "description": "1024p",
+                "codecs": "JPEG",
+                "extension": "jpg",
+                "width": 1024,
+                "isSeoRelevant": false
+            },
+            {
+                "datatype": "xmediaFormat",
+                "id": 34,
+                "set": 2,
+                "type": "image",
+                "name": "850p",
+                "description": "850\u200bp",
+                "codecs": "JPEG",
+                "extension": "jpg",
+                "width": 850,
+                "isSeoRelevant": false
+            },
+            {
+                "datatype": "xmediaFormat",
+                "id": 35,
+                "set": 2,
+                "type": "image",
+                "name": "750p",
+                "description": "750\u200bp",
+                "codecs": "JPEG",
+                "extension": "jpg",
+                "width": 750,
+                "isSeoRelevant": false
+            },
+            {
+                "datatype": "xmediaFormat",
+                "id": 36,
+                "set": 2,
+                "type": "image",
+                "name": "563p",
+                "description": "563\u200bp",
+                "codecs": "JPEG",
+                "extension": "jpg",
+                "width": 563,
+                "isSeoRelevant": false
+            },
+            {
+                "datatype": "xmediaFormat",
+                "id": 37,
+                "set": 2,
+                "type": "image",
+                "name": "375p",
+                "description": "375p",
+                "codecs": "JPEG",
+                "extension": "jpg",
+                "width": 375,
+                "isSeoRelevant": false
+            },
+            {
+                "datatype": "xmediaFormat",
+                "id": 38,
+                "set": 2,
+                "type": "image",
+                "name": "135p",
+                "description": "135p",
+                "codecs": "JPEG",
+                "extension": "jpg",
+                "width": 135,
+                "isSeoRelevant": false
+            },
+            {
+                "datatype": "xmediaFormat",
+                "id": 39,
+                "set": 2,
+                "type": "3dadvanced",
+                "name": "3DAdvanced_GLB",
+                "description": "Advanced OBJ 3D Model",
+                "codecs": "glb",
+                "extension": "glb",
+                "width": 800,
+                "isSeoRelevant": false
+            },
+            {
+                "datatype": "xmediaFormat",
+                "id": 40,
+                "set": 2,
+                "type": "spin360",
+                "name": "spin360",
+                "description": "Spin 360 Model",
+                "codecs": "jpg",
+                "extension": "jpg",
+                "width": 560,
+                "isSeoRelevant": false
+            }
+        ],
+        "xmediaTransformations": [
+            {
+                "meta": {
+                    "xmedia": [
+                        {
+                            "allowedScreens": [
+                                "large"
+                            ],
+                            "datatype": "xmedia",
+                            "height": 1650,
+                            "kind": "other",
+                            "name": "simple-large@en_GB_0",
+                            "path": "/contents/cm/watermarks/looks-ctx",
+                            "set": 2,
+                            "timestamp": "1674150787592",
+                            "type": "vector",
+                            "width": 1100
+                        }
+                    ]
+                },
+                "name": "look",
+                "type": "watermark"
+            },
+            {
+                "meta": {
+                    "xmedia": [
+                        {
+                            "allowedScreens": [
+                                "small",
+                                "large"
+                            ],
+                            "datatype": "xmedia",
+                            "height": 1251,
+                            "kind": "other",
+                            "name": "into-the-process-0",
+                            "path": "/contents/cm/assets/watermark",
+                            "set": 2,
+                            "timestamp": "1724419451845",
+                            "type": "vector",
+                            "width": 3000
+                        },
+                        {
+                            "allowedScreens": [
+                                "small",
+                                "large"
+                            ],
+                            "datatype": "xmedia",
+                            "height": 1251,
+                            "kind": "other",
+                            "name": "into-the-process-0",
+                            "path": "/contents/cm/assets/watermark",
+                            "set": 2,
+                            "timestamp": "1724419451845",
+                            "type": "vector",
+                            "width": 3000
+                        }
+                    ]
+                },
+                "name": "intotheprocess",
+                "type": "watermark"
+            },
+            {
+                "meta": {
+                    "xmedia": [
+                        {
+                            "allowedScreens": [
+                                "large",
+                                "small"
+                            ],
+                            "datatype": "xmedia",
+                            "height": 1650,
+                            "kind": "other",
+                            "name": "svg-landscape-425b1b9a-47b1-4703-a4e1-4ba4aab97dde-default",
+                            "path": "/assets/public/e684/8d60/5dae4f2cb2c0/5f1d208af9ce/",
+                            "set": 2,
+                            "timestamp": "1752231545341",
+                            "type": "vector",
+                            "width": 1100
+                        }
+                    ]
+                },
+                "name": "final_sale",
+                "type": "watermark"
+            }
+        ],
+        "usingDefaultStore": false,
+        "store": {
+            "accountVerification": {
+                "guestRegister": {
+                    "isEnabled": true,
+                    "showCaptcha": false,
+                    "verificationMethod": "PHONE"
+                },
+                "phoneLegalText": {
+                    "isEnabled": true
+                },
+                "registeredUser": {
+                    "isEnabled": true
+                }
+            },
+            "cartCompositionExtraDetail": {
+                "enabledChannels": []
+            },
+            "cartRelatedProducts": {
+                "isEnabled": true,
+                "supportedChannels": [
+                    "ios",
+                    "android",
+                    "web",
+                    "web-mobile"
+                ],
+                "maxItems": 42
+            },
+            "catalogId": 22051,
+            "colbensonUrl": "https://sbzara.empathybroker.com/sb-zara",
+            "countriesInfo": {
+                "billingCountries": [
+                    {
+                        "countryCode": "AT",
+                        "name": "Austria",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "BE",
+                        "name": "Belgium",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "BG",
+                        "name": "Bulgaria",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "IC",
+                        "name": "Canary Islands",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "HR",
+                        "name": "Croatia",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "CY",
+                        "name": "Cyprus",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "CZ",
+                        "name": "Czech Republic",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "DK",
+                        "name": "Denmark",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "EE",
+                        "name": "Estonia",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "FI",
+                        "name": "Finland",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "FR",
+                        "name": "France",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "DE",
+                        "name": "Germany",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "GR",
+                        "name": "Greece",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "HU",
+                        "name": "Hungary",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "IE",
+                        "name": "Ireland",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "IT",
+                        "name": "Italy",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "LV",
+                        "name": "Latvia",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "LT",
+                        "name": "Lithuania",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "LU",
+                        "name": "Luxembourg",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "MT",
+                        "name": "Malta",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "NL",
+                        "name": "Netherlands",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "PL",
+                        "name": "Poland",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "PT",
+                        "name": "Portugal",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "RO",
+                        "name": "Romania",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "SK",
+                        "name": "Slovakia",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "SI",
+                        "name": "Slovenia",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "ES",
+                        "name": "Spain",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "SE",
+                        "name": "Sweden",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    },
+                    {
+                        "countryCode": "GB",
+                        "name": "United Kingdom",
+                        "compulsoryDocumentTypesForLegalReasons": []
+                    }
+                ],
+                "shippingCountries": [
+                    {
+                        "countryCode": "GB",
+                        "name": "United Kingdom"
+                    }
+                ]
+            },
+            "countryCode": "GB",
+            "countryName": "United Kingdom",
+            "discountDisclaimer": "* Discount applied from regular price",
+            "displayDiscountPercentage": true,
+            "displayFuturePrice": true,
+            "displayOriginalPrice": true,
+            "eguiData": {
+                "assignTitleBaseUrl": "https://www.einvoice.nat.gov.tw/APMEMBERVAN/membercardlogin",
+                "donationEntitiesListBaseUrl": "https://www.einvoice.nat.gov.tw/APMEMBERVAN/XcaOrgPreserveCodeQuery/XcaOrgPreserveCodeQuery",
+                "shoppingGuideInstructionsUrl": "https://www.zara.com/tw/en/help-center/Invoices",
+                "isEnabled": false
+            },
+            "generatePermanentSeoUrl": true,
+            "giftCardStepSliderValue": 4,
+            "gitftCardMonthsToExpire": 36,
+            "hidePriceNotAvailableMessage": true,
+            "id": 10706,
+            "inditexLinkedAccounts": {
+                "default": {
+                    "isEnabled": false
+                },
+                "register": {
+                    "isEnabled": false
+                },
+                "checkout": {
+                    "isEnabled": false
+                }
+            },
+            "isAddressEvaluationEnabled": true,
+            "isCompanyAllowed": true,
+            "isDarkModeEnabled": false,
+            "isDataConsentPolicyEnabled": false,
+            "isDeleteAccountActive": true,
+            "isDonationEnabled": false,
+            "isDonationFilterEnabled": true,
+            "isElectronicInvoiceActive": false,
+            "isFacebookConversionEnabled": false,
+            "isForceRefundOldConfig": false,
+            "isGiftcardDetailRequired": true,
+            "isInStoreOrdersTicketScanningEnabled": true,
+            "isLiveTrackingEnabled": false,
+            "isMultiOrderReturnsDetailActive": true,
+            "isMultiOrderReturnsExchangeActive": true,
+            "isMultiOrderReturnsReturnActive": true,
+            "newsletter": {
+                "isAutomaticSubscribeEnabled": false,
+                "isAutomaticUnsubscribeEnabled": true,
+                "isDetailedUnsubscribeEnabled": true
+            },
+            "isNewsletterUnsubscribeButtonEnabled": true,
+            "isOnlineExchangeAllowed": true,
+            "isOauthAuthenticationEnabled": true,
+            "isOpenForSale": true,
+            "isOrderCancellationRequestFormEnabled": false,
+            "isPaperlessShipmentEnabled": true,
+            "isPhonePrefixDisabled": false,
+            "isProsineckiEnabled": true,
+            "isRefundBankSearchAvailable": false,
+            "isRefundHelpEnabled": false,
+            "isRegionGroupEnabled": false,
+            "isRegisterEnabled": true,
+            "isRepentanceEnabled": false,
+            "isReturnInStoreMessageVisible": false,
+            "isReturnRequestFormProcessEnabled": false,
+            "isReturnRequestListAvailable": true,
+            "isSaleEvent": false,
+            "isShowPriceTaxMessageRequired": false,
+            "isShowTaxesRequired": true,
+            "isSocialDesign": false,
+            "isStockAccurateEnabled": true,
+            "isStockInStoresAvailable": true,
+            "isTaxIncluded": true,
+            "isTravelModeEnabled": true,
+            "isUnifiedOrderListEnabled": true,
+            "isUsePhoneAsLogonId": false,
+            "isVirtualGiftCardShareAllowed": true,
+            "isWalletAvailable": true,
+            "linkToRelatedStores": false,
+            "notificationCenter": {
+                "isEnabled": true
+            },
+            "omnibusMessageEnabled": false,
+            "phoneCountryCode": "+44",
+            "physicalStores": {
+                "hasPhysicalStores": true,
+                "storeServices": [
+                    "store_mode",
+                    "fitting_room_booking",
+                    "banner_locatable_products_out_store",
+                    "banner_locatable_products_in_store",
+                    "locate_products_out_store",
+                    "fast_sint_purchase_outside",
+                    "fast_sint_purchase_inside",
+                    "locate_products_in_store"
+                ],
+                "storeServicesBaseUrl": "https://ws.inditex.com/RFEAI689/ItxBSStoreServices/FittingRoomReserve.svc/Rest/",
+                "services": {
+                    "stockInStore": {
+                        "baseUrl": "/itxrest/1/bam/store/{storeId}/physical-store/product/availability",
+                        "enabledChannels": [
+                            "ios",
+                            "android",
+                            "web"
+                        ]
+                    }
+                }
+            },
+            "privacy": {
+                "url": "https://static.zara.net/static/pdfs/UK/privacy-policy/privacy-policy-en_UK-20251113.pdf",
+                "version": "1762992000000"
+            },
+            "privacyUrl": "https://static.zara.net/static/pdfs/UK/privacy-policy/privacy-policy-en_UK-20251113.pdf",
+            "recommendProviderLocation": {
+                "global": {
+                    "enabledSections": [],
+                    "provider": "wide-eyes",
+                    "timeout": 3000,
+                    "enabledChannels": [],
+                    "multitenantEnabledChannels": []
+                },
+                "grid": {
+                    "enabledSections": [
+                        "WOMAN",
+                        "MAN",
+                        "KID",
+                        "HOME"
+                    ],
+                    "provider": "yoda",
+                    "timeout": 3000,
+                    "enabledChannels": [
+                        "android",
+                        "ios",
+                        "web",
+                        "web_mobile"
+                    ],
+                    "multitenantEnabledChannels": []
+                },
+                "pdpGrid": {
+                    "enabledSections": [
+                        "WOMAN",
+                        "MAN",
+                        "KID",
+                        "HOME"
+                    ],
+                    "provider": "google",
+                    "timeout": 3000,
+                    "enabledChannels": [],
+                    "multitenantEnabledChannels": []
+                },
+                "pdpToast": {
+                    "enabledSections": [
+                        "WOMAN",
+                        "MAN",
+                        "KID",
+                        "HOME"
+                    ],
+                    "provider": "zara",
+                    "timeout": 3000,
+                    "enabledChannels": [],
+                    "multitenantEnabledChannels": [
+                        "ios",
+                        "android",
+                        "web",
+                        "web_mobile"
+                    ]
+                },
+                "cart": {
+                    "enabledSections": [],
+                    "provider": "",
+                    "timeout": 3000,
+                    "enabledChannels": [],
+                    "multitenantEnabledChannels": []
+                },
+                "searchHome": {
+                    "enabledSections": [
+                        "WOMAN",
+                        "MAN",
+                        "KID",
+                        "HOME"
+                    ],
+                    "provider": "google",
+                    "timeout": 3000,
+                    "enabledChannels": [],
+                    "multitenantEnabledChannels": [
+                        "ios",
+                        "android",
+                        "web",
+                        "web_mobile"
+                    ]
+                },
+                "fullPersonalizedGrid": {
+                    "enabledSections": [
+                        "WOMAN",
+                        "MAN",
+                        "KID",
+                        "HOME"
+                    ],
+                    "enabledChannels": [
+                        "android",
+                        "ios"
+                    ],
+                    "multitenantEnabledChannels": []
+                },
+                "ownUniversePersonalizedGrid": {
+                    "enabledSections": [
+                        "WOMAN",
+                        "MAN",
+                        "KID",
+                        "HOME"
+                    ],
+                    "enabledChannels": [
+                        "android",
+                        "ios"
+                    ],
+                    "multitenantEnabledChannels": []
+                }
+            },
+            "relatedStores": [],
+            "searchLang": "en_GB",
+            "sections": [
+                {
+                    "id": 0,
+                    "name": "ALL",
+                    "description": "All",
+                    "availableFor": [],
+                    "engDescription": "All"
+                },
+                {
+                    "id": 1,
+                    "name": "WOMAN",
+                    "description": "Woman",
+                    "availableFor": [
+                        "newsletter_section",
+                        "newsletter",
+                        "product_search"
+                    ],
+                    "engDescription": "Woman"
+                },
+                {
+                    "id": 2,
+                    "name": "MAN",
+                    "description": "Man",
+                    "availableFor": [
+                        "newsletter_section",
+                        "newsletter",
+                        "product_search"
+                    ],
+                    "engDescription": "Man"
+                },
+                {
+                    "id": 3,
+                    "name": "KID",
+                    "description": "Kids",
+                    "availableFor": [
+                        "newsletter_section",
+                        "newsletter",
+                        "product_search"
+                    ],
+                    "engDescription": "Kids"
+                },
+                {
+                    "id": 4,
+                    "name": "HOME",
+                    "description": "Home",
+                    "availableFor": [
+                        "newsletter_section",
+                        "newsletter",
+                        "product_search"
+                    ],
+                    "engDescription": "Home"
+                },
+                {
+                    "id": 5,
+                    "name": "SRPLS",
+                    "description": "SRPLS",
+                    "availableFor": [
+                        "newsletter_collection",
+                        "srpls_category"
+                    ],
+                    "engDescription": "SRPLS"
+                },
+                {
+                    "id": 6,
+                    "name": "BEAUTY",
+                    "description": "Beauty",
+                    "availableFor": [
+                        "newsletter_section",
+                        "newsletter"
+                    ],
+                    "engDescription": "Beauty"
+                },
+                {
+                    "id": 7,
+                    "name": "MASSIMODUTTI",
+                    "description": "Massimo Dutti",
+                    "availableFor": [],
+                    "engDescription": "Massimo Dutti"
+                },
+                {
+                    "id": 8,
+                    "name": "SRA",
+                    "description": "SR_A",
+                    "availableFor": [],
+                    "engDescription": "SR_A"
+                }
+            ],
+            "sharingMethods": [
+                "pinterest",
+                "facebook",
+                "twitter"
+            ],
+            "shouldShowState": false,
+            "showAdCookiesPreferences": false,
+            "showContactLinkInHelpMenu": false,
+            "showContactOnUserMenu": false,
+            "showCloseLabelInPrivacyErrorButton": false,
+            "showCrossBorderPrivacyCheck": false,
+            "showPrivacityPolicyCookie": true,
+            "showSensitivePrivacyCheck": false,
+            "stockBaseUrl": "https://api.inditex.com/ocpstiencom-external/common",
+            "styles": {
+                "colors": {
+                    "priceColors": {
+                        "salesPrice": {
+                            "backgroundColorHexCode": "#000000",
+                            "textColorHexCode": "#ffffff",
+                            "darkModeBackgroundColorHexCode": "#ffffff",
+                            "darkModeTextColorHexCode": "#000000"
+                        },
+                        "futurePrice": {
+                            "backgroundColorHexCode": "#23f444",
+                            "textColorHexCode": "#000000",
+                            "darkModeBackgroundColorHexCode": "#23f444",
+                            "darkModeTextColorHexCode": "#000000"
+                        },
+                        "highlightPrice": {
+                            "backgroundColorHexCode": "#000000",
+                            "textColorHexCode": "#ffffff",
+                            "darkModeBackgroundColorHexCode": "#ffffff",
+                            "darkModeTextColorHexCode": "#000000"
+                        }
+                    },
+                    "freeShippingMethod": {
+                        "textColorHexCodeLight": "#000000",
+                        "textColorHexCodeDark": "#ffffff"
+                    }
+                },
+                "checkout": {
+                    "summary": "default"
+                }
+            },
+            "supportedLanguages": [
+                {
+                    "id": -1,
+                    "code": "en",
+                    "locale": "en_GB",
+                    "name": "English",
+                    "countryName": "United Kingdom",
+                    "isSeoIrrelevant": false,
+                    "isSeoProductIrrelevant": false,
+                    "direction": "ltr",
+                    "formats": {
+                        "number": {
+                            "decimalSeparator": ".",
+                            "thousandsSeparator": ","
+                        },
+                        "date": {
+                            "shortDate": "d MMM y",
+                            "longDate": "d MMM y HH:mm:ss"
+                        }
+                    },
+                    "languageTag": "en-GB",
+                    "isRtl": false
+                }
+            ],
+            "userPreferredLanguage": {
+                "register": {
+                    "isEnabled": false
+                },
+                "profile": {
+                    "isEnabled": false
+                }
+            },
+            "useXmediaRealWidth": true,
+            "virtualGiftCard": {
+                "share": {
+                    "enabledChannels": [
+                        "web",
+                        "web_mobile",
+                        "android",
+                        "ios"
+                    ]
+                },
+                "instantShipping": {
+                    "enabledChannels": [
+                        "web",
+                        "web_mobile",
+                        "android",
+                        "ios"
+                    ],
+                    "isEnabled": true
+                }
+            },
+            "virtualGiftCardMaxDaysToSend": 30,
+            "virtualGiftCardMinTimeToSend": 60,
+            "warehouseId": 19551,
+            "wallet": {
+                "isEnabled": true
+            },
+            "wishlist": {
+                "isEnabled": true
+            },
+            "zaraIdQR": {
+                "isEnabled": true,
+                "colors": [
+                    {
+                        "backgroundColor": "#F0E7DF",
+                        "textColor": "#000000"
+                    },
+                    {
+                        "backgroundColor": "#4D5dEE",
+                        "textColor": "#FFFFFF"
+                    },
+                    {
+                        "backgroundColor": "#000000",
+                        "textColor": "#FFFFFF"
+                    },
+                    {
+                        "backgroundColor": "#FFFFFF",
+                        "textColor": "#000000"
+                    },
+                    {
+                        "backgroundColor": "#D7DA73",
+                        "textColor": "#000000"
+                    },
+                    {
+                        "backgroundColor": "#65C39F",
+                        "textColor": "#000000"
+                    },
+                    {
+                        "backgroundColor": "#FFB4E2",
+                        "textColor": "#000000"
+                    },
+                    {
+                        "backgroundColor": "#FE9459",
+                        "textColor": "#000000"
+                    }
+                ]
+            },
+            "addressSearchEngine": {
+                "daum": {
+                    "clientServiceUrl": "https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"
+                }
+            },
+            "deviceFingerprint": {
+                "alipayJavascriptRiskUrl": "https://rds.alipay.com/merchant/merchant.js",
+                "deviceFingerPrintFlashActive": false,
+                "fraudCybersourceBasicMerchantId": "tarjetaregalo_dm",
+                "giftcardFraudCheckActive": false,
+                "hostname": "h.online-metrix.net",
+                "merchantId": "itx_dm",
+                "organizationId": "k8vif92e"
+            },
+            "geoInfo": {
+                "location": {
+                    "lat": 55.378051,
+                    "lng": -3.435973
+                },
+                "bounds": {
+                    "northeast": {
+                        "lat": 60.856553,
+                        "lng": 1.7627096
+                    },
+                    "southwest": {
+                        "lat": 49.8699654,
+                        "lng": -8.6493571
+                    }
+                }
+            },
+            "giftCardTerms": {
+                "url": "https://static.zara.net/static/pdfs/UK/giftcard-conditions/giftcard-conditions-en_UK-20221103.pdf",
+                "version": "1671667200000"
+            },
+            "interactiveSizeGuide": {
+                "enabledChannels": [
+                    "web",
+                    "web_mobile",
+                    "app"
+                ],
+                "enabledSections": [
+                    "WOMAN",
+                    "MAN",
+                    "HOME",
+                    "KID"
+                ]
+            },
+            "locale": {
+                "currencyCode": "GBP",
+                "currencySymbol": "GBP",
+                "currencyFormat": "#,##0.00 \u00a4\u00a4",
+                "currencyDecimals": -2,
+                "currencyRate": 1.14586914,
+                "currencies": [
+                    {
+                        "currencyCode": "GBP",
+                        "currencySymbol": "GBP",
+                        "currencyFormat": "#,##0.00 \u00a4\u00a4",
+                        "currencyDecimals": -2,
+                        "conversionRates": [
+                            {
+                                "from": "GBP",
+                                "to": "EUR",
+                                "rate": 1.14586914
+                            }
+                        ]
+                    }
+                ],
+                "isBankBicMandatory": true,
+                "isBankInnMandatory": false,
+                "isBankSwift": true,
+                "isCompoundName": false,
+                "isLastNameFirst": false
+            },
+            "prosinecki": {
+                "webScriptUrl": "https://www.zara.com/prosinecki-static/launcher.js",
+                "appsScriptUrl": "https://www.zara.com/prosinecki-static/",
+                "enabledChannels": [
+                    "web",
+                    "web_mobile",
+                    "ios",
+                    "android"
+                ],
+                "enabledBrandGroups": [
+                    "zara"
+                ],
+                "enabledSections": [
+                    "MAN",
+                    "WOMAN",
+                    "KID"
+                ],
+                "enabledFamilies": [
+                    "ALL"
+                ]
+            },
+            "sizeRecommender": {
+                "sizeRecommenderDesktopScript": "//widget.fitanalytics.com/widget.js",
+                "isSizeRecommenderEnabled": true,
+                "sizeRecommenderMobileScript": "//widget.fitanalytics.com/widget_jq.js",
+                "sizeRecommenderPurchaseScript": "nd"
+            },
+            "support": {
+                "abTesting": {
+                    "appsClientKey": "",
+                    "enabled": true,
+                    "enabledChannels": [],
+                    "webMobileClientKey": "2984620232",
+                    "webStandardClientKey": "151300895"
+                },
+                "accessibilityAid": {
+                    "enabledChannels": {
+                        "web": {
+                            "en": {
+                                "siteKey": "925faa3ff1a057b4b3ed01fdb1ce2a40",
+                                "position": "right"
+                            }
+                        }
+                    }
+                },
+                "adoptLegalChangesInOrderInfo": false,
+                "chat": {
+                    "integratedChatLangIds": [
+                        -1
+                    ],
+                    "integratedChatUrl": "https://www.zara.com/integration/chat-static/entry.js",
+                    "isChatEnabled": false,
+                    "isMochatEnabled": true,
+                    "itxWebChatMainUrl": "https://www.zara.com/static/applications/chat/index.html",
+                    "registeredChatBasePath": "http://static.zara.net/static/chat_cn/",
+                    "dynamicsChatConfig": {
+                        "enabledChannels": [],
+                        "orgId": "dde25578-c8f1-ee11-a1fa-000d3a248d6c",
+                        "orgUrl": "https://m-dde25578-c8f1-ee11-a1fa-000d3a248d6c.eu.omnichannelengagementhub.com",
+                        "appId": "66b4fa14-7d6b-48da-91fa-ed1d1e1f860c"
+                    },
+                    "isDynamicsChatEnabled": true
+                },
+                "clickToCall": {
+                    "clickToCallBaseUrl": "https://ctc.zara.com/CCPROCTC/ClickToCallRequest.jsp?Idioma={langId}&UserDefined6={countryId}&UserDefined7={originId}&ProductId={productCode}",
+                    "clickToCallLangs": [],
+                    "clickToCallLangsId": []
+                },
+                "contact": {
+                    "enabledChannels": []
+                },
+                "contactLinkInHelpMenu": {
+                    "enabledChannels": [
+                        "android",
+                        "ios"
+                    ]
+                },
+                "isContactLegalMessageRequired": false,
+                "isContactPopupEnable": true,
+                "conversionIntegration": {
+                    "adWords": {
+                        "accountId": "",
+                        "baseImageUrl": "",
+                        "color": "ffffff",
+                        "enabled": false,
+                        "format": "3",
+                        "label": "",
+                        "scriptUrl": "",
+                        "scriptUrlAsync": "https://www.googleadservices.com/pagead/conversion_async.js"
+                    },
+                    "doubleClick": {
+                        "enabled": true
+                    },
+                    "facebook": {
+                        "accountId": "969087516477356",
+                        "enabled": false,
+                        "scriptUrl": "https://connect.facebook.net/en_US/fbevents.js"
+                    },
+                    "yahoo": {
+                        "accountId": "",
+                        "baseImageUrl": "",
+                        "conversionId": "",
+                        "enabled": false,
+                        "label": "LABEL12345",
+                        "scriptUrl": ""
+                    }
+                },
+                "donation": {
+                    "isTermsLinkEnabled": true
+                },
+                "dropPoints": {
+                    "showCode": false
+                },
+                "forceHttps": [
+                    "mobile",
+                    "desktop"
+                ],
+                "fraudConfig": {
+                    "isRiskifiedActive": true
+                },
+                "isGiftCardExpirationDisclaimerRequired": false,
+                "googleServices": {
+                    "key": "AIzaSyCTJ_0LCrIe8CRiafZrm0FiCROH_dYGfIo"
+                },
+                "tracking": {
+                    "finalMilestones": [
+                        "delivery",
+                        "rejection",
+                        "cancellation"
+                    ],
+                    "liveTracking": {
+                        "enabledChannels": []
+                    },
+                    "milestonesOrder": [
+                        "purchase",
+                        "inPreparation",
+                        "readyForShipment",
+                        "expedition",
+                        "readyForDelivery",
+                        "outForDelivery",
+                        "inDropPoint",
+                        "delivery"
+                    ]
+                },
+                "gtm": {
+                    "accountId": "GTM-NK4BSSL",
+                    "enabled": true
+                },
+                "orderList": {
+                    "apiVersion": "3"
+                },
+                "helpCenter": {
+                    "enabledChannels": [
+                        "app"
+                    ]
+                },
+                "legalDocuments": [
+                    {
+                        "kind": "ASSISTANT_TERMS",
+                        "label": "AI conditions for the assistant",
+                        "url": "https://static.zara.net/static/pdfs/UK/assistant_terms/Assistant-terms-and-conditions-en_UK-01122025.pdf",
+                        "version": "1764547200000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": []
+                    },
+                    {
+                        "kind": "PRIVACY_POLICY",
+                        "label": "Privacy policy ",
+                        "url": "https://static.zara.net/static/pdfs/UK/privacy-policy/privacy-policy-en_UK-20251113.pdf",
+                        "version": "1762992000000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": [
+                            "home",
+                            "productDetail"
+                        ]
+                    },
+                    {
+                        "kind": "REPAIR_TERMS_AND_CONDITIONS",
+                        "label": "Repair terms and conditions",
+                        "url": "https://static.zara.net/static/pdfs/UK/repair-terms-and-conditions/repair-terms-and-conditions-en_UK-20231002.pdf",
+                        "version": "1695772800000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": []
+                    },
+                    {
+                        "kind": "TERMS_AND_CONDITIONS_APP",
+                        "label": "T&C features app ",
+                        "url": "https://static.zara.net/static/pdfs/UK/terms-and-conditions-app/terms-and-conditions-app-en_UK-20220621.pdf",
+                        "version": "1655769600000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": []
+                    },
+                    {
+                        "kind": "RESELL_TERMS_AND_CONDITIONS",
+                        "label": "RESELL_TERMS_AND_CONDITIONS",
+                        "url": "https://static.zara.net/static/pdfs/UK/resell-terms-and-conditions/resell-terms-and-conditions-en_UK-20231023.pdf",
+                        "version": "1698019200000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": []
+                    },
+                    {
+                        "kind": "TERMS_AND_CONDITIONS",
+                        "label": "Terms of use ",
+                        "url": "https://static.zara.net/static/pdfs/UK/terms-and-conditions/terms-and-conditions-en_UK-20240723.pdf",
+                        "version": "1721692800000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": [
+                            "home",
+                            "productDetail"
+                        ]
+                    },
+                    {
+                        "kind": "GIFTVIDEO_TERMS",
+                        "label": "Gift Video Conditions\u200b ",
+                        "url": "https://static.zara.net/static/pdfs/ZARA/giftvideo-conditions/giftvideo-conditions-en_ZARA-20210708.pdf",
+                        "version": "1625702400000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": []
+                    },
+                    {
+                        "kind": "TAX_STRATEGY_AND_APPROACH",
+                        "label": "TAX STRATEGY AND APPROACH ",
+                        "url": "https://static.zara.net/static/pdfs/UK/tax-strategy-and-approach/tax-strategy-and-approach-en_UK-20250131.pdf",
+                        "version": "1738195200000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": [
+                            "home"
+                        ]
+                    },
+                    {
+                        "kind": "ACT_ON_MODERN_SLAVERY",
+                        "label": "UK ACT ON MODERN SLAVERY ",
+                        "url": "https://static.zara.net/static/pdfs/UK/act-on-modern-slavery/act-on-modern-slavery-en_UK-20250730.pdf",
+                        "version": "1753833600000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": [
+                            "home"
+                        ]
+                    },
+                    {
+                        "kind": "DONATE_PRIVACY_POLICY",
+                        "label": "Donate privacy policy ",
+                        "url": "https://static.zara.net/static/pdfs/UK/donate-privacy-policy/donate-privacy-policy-en_UK-20221020.pdf",
+                        "version": "1666310400000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": []
+                    },
+                    {
+                        "kind": "GIFTCARD_TERMS",
+                        "label": "Gift Card Conditions ",
+                        "url": "https://static.zara.net/static/pdfs/UK/giftcard-conditions/giftcard-conditions-en_UK-20221103.pdf",
+                        "version": "1671667200000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": []
+                    },
+                    {
+                        "kind": "DONATE_TERMS_AND_CONDITIONS",
+                        "label": "Donate terms and conditions",
+                        "url": "https://static.zara.net/static/pdfs/UK/donate-terms-and-conditions/donate-terms-and-conditions-en_UK-20231002.pdf",
+                        "version": "1695772800000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": []
+                    },
+                    {
+                        "kind": "REPAIR_PRIVACY_POLICY",
+                        "label": "Repair privacy policy",
+                        "url": "https://static.zara.net/static/pdfs/UK/repair-privacy-policy/repair-privacy-policy-en_UK-20221020.pdf",
+                        "version": "1666310400000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": []
+                    },
+                    {
+                        "kind": "JOINLIFE_TERMS",
+                        "label": "Terms and conditions ",
+                        "url": "https://static.zara.net/static/pdfs/UK/joinlife-conditions/joinlife-conditions-en_UK-20210602.pdf",
+                        "version": "1622592000000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": []
+                    },
+                    {
+                        "kind": "GENERATIVE_AI_TERMS",
+                        "label": "Generative AI Terms",
+                        "url": "https://static.zara.net/static/pdfs/UK/generative-ai-terms/generative-ai-terms-en_UK-20240418.pdf",
+                        "version": "1713398400000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": [
+                            "chat"
+                        ]
+                    }
+                ],
+                "documents": [],
+                "miniContactAvailableContext": "",
+                "naizfit": {
+                    "webScriptUrl": "https://backend.production.naiz.fit/bundle",
+                    "appsScriptUrl": "https://static.zara.net/static/contents/naizfit/naizfit-app-embedded.html?ts=1646903103655",
+                    "enabledChannels": []
+                },
+                "onlineExchange": {
+                    "isEnabled": true,
+                    "enabledChannels": [
+                        "web",
+                        "web_mobile",
+                        "app"
+                    ],
+                    "maxExchangeUnitsCount": 50,
+                    "isMobileNewProcessForGuestAvailable": false,
+                    "isNewWindowForGuestAvailable": true,
+                    "isShippingEditable": true
+                },
+                "orderProcess": {
+                    "edgeImplementationStatus": {
+                        "webMobile": "off",
+                        "webStandard": "live"
+                    },
+                    "isFullBillingAddresNeeded": false,
+                    "restylingCheckoutStatus": "off",
+                    "restylingCheckoutUrl": "https://static.zara.net/static/applications/checkout-restyling/css/redesign.css?v=16",
+                    "restylingLegacyCheckoutUrl": ""
+                },
+                "payment": {
+                    "cardinalDeviceDataCollectionUrl": "https://client.cardinaltrusted.com/centinelapi/V2/Cruise/Collect",
+                    "creditCardExpirationMonthsThresold": 1,
+                    "isShowPaymentExchangeWarningEnable": false,
+                    "kcpBinaryInstallerUrl": "https://pay.kcp.co.kr/plugin_new/file/k5/KCPPaymentPluginSetup.exe",
+                    "kcpJsUrl": "https://pay.kcp.co.kr/plugin/payplus.js",
+                    "kcpWebPluginUrl": "https://pay.kcp.co.kr/plugin/payplus_web.jsp",
+                    "klarnaWidgetUrl": "https://x.klarnacdn.net/kp/lib/v1/api.js",
+                    "offlineExpirationDelayTime": 24
+                },
+                "productsCategoryNamePosition": 4,
+                "productsSearch": {
+                    "provider": "colbenson",
+                    "maxPrefetchedNextQueries": 2,
+                    "searchByImage": {
+                        "enabled": true,
+                        "host": "api.wide-eyes.it",
+                        "apiKey": "fc908eafa60f3fda16d06cf87f6a1578ecaadbf8"
+                    },
+                    "urls": {
+                        "autocomplete": "https://api.empathybroker.com/search/v1/query/zara/autocomplete",
+                        "empathize": "https://api.empathybroker.com/search/v1/query/zara/empathize",
+                        "ping": "https://api.empathybroker.com/tagging/v1/ping",
+                        "search": "https://api.empathybroker.com/search/v1/query/zara/search",
+                        "nextQueries": "https://api.empathybroker.com/search/v1/query/zara/nextqueries"
+                    },
+                    "filtering": {
+                        "enabledStatus": {
+                            "webMobile": "live",
+                            "webStandard": "off",
+                            "iOS": "live",
+                            "android": "live"
+                        },
+                        "allowedFacets": [
+                            "sizes_facet",
+                            "color_facet",
+                            "specificFeatures_facet",
+                            "groupSection_facet",
+                            "price_range_facet"
+                        ]
+                    },
+                    "query": [
+                        {
+                            "name": "sort",
+                            "value": [
+                                "score desc",
+                                "kpi_salesAmount_10706 desc"
+                            ]
+                        }
+                    ],
+                    "engineName": "colbenson-platform",
+                    "engines": [
+                        {
+                            "name": "colbenson",
+                            "urls": {
+                                "autocomplete": "https://api.empathybroker.com/search/v1/query/zara/autocomplete",
+                                "empathize": "https://api.empathybroker.com/search/v1/query/zara/empathize",
+                                "ping": "https://api.empathybroker.com/tagging/v1/ping",
+                                "search": "https://api.empathybroker.com/search/v1/query/zara/search",
+                                "nextQueries": "https://api.empathybroker.com/search/v1/query/zara/nextqueries"
+                            },
+                            "query": [
+                                {
+                                    "name": "sort",
+                                    "value": [
+                                        "score desc",
+                                        "kpi_salesAmount_10706 desc"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "colbenson-platform",
+                            "urls": {
+                                "autocomplete": "https://api.empathy.co/search/v1/query/zara/empathize",
+                                "empathize": "https://api.empathy.co/search/v1/query/zara/empathize",
+                                "ping": "https://api.empathy.co/tagging/v1/ping",
+                                "search": "https://api.empathy.co/search/v1/query/zara/search",
+                                "nextQueries": "https://api.empathy.co/nextqueries/zara"
+                            },
+                            "query": []
+                        }
+                    ]
+                },
+                "helpSearch": {
+                    "appId": "HYP5W1XTLH",
+                    "apiKey": "dec276a037b4d2c891202b5ef370a06f",
+                    "indexName": "za-help-pro-data",
+                    "minCharsToQuery": 3,
+                    "minMillisToQuery": 1000,
+                    "showSuggestionWhenNoResults": true,
+                    "articleKeyMappings": []
+                },
+                "qubit": {
+                    "isQubitEnabled": false,
+                    "qubitScriptUrl": "https://static.goqubit.com/smartserve-5089.js"
+                },
+                "rgpd": {
+                    "isEnabled": true,
+                    "showPopup": true
+                },
+                "showAndroidLegacyCartPercent": 0,
+                "showPrivacyLinks": true,
+                "stockOutSubscription": {
+                    "shouldConfirmEmail": false
+                },
+                "ticketToBill": {
+                    "captchaUrl": "/integration/bille/captcha",
+                    "createInvoiceUrl": "/integration/bille/t2f/createInvoice",
+                    "isEnabled": false,
+                    "ticketImageUrl": "https://static.zara.net/static/images/ticket-to-bill/mx/ticket-sample.svg"
+                },
+                "networkClientMonitoring": {
+                    "web": {
+                        "enabled": false,
+                        "interval": 30000
+                    }
+                },
+                "webClientPerformanceMonitoring": {
+                    "enabled": false,
+                    "webMobileKey": "69F5W-SKVXA-FCA66-T7RDS-MMYU2",
+                    "webStandardKey": "CW94T-UEA6E-MVD66-4CNLM-2687T"
+                },
+                "wideEyes": {
+                    "apiKey": "186e68fad9bd145e0cf965f2dc6d25ff708f10cf",
+                    "host": "pro.api-mirror.wide-eyes.it",
+                    "showSimilar": {
+                        "enabledChannels": [
+                            "app",
+                            "web",
+                            "web_mobile"
+                        ],
+                        "enabledSections": []
+                    },
+                    "wearItWith": {
+                        "enabledChannels": [
+                            "app",
+                            "web",
+                            "web_mobile"
+                        ],
+                        "enabledSections": [
+                            1,
+                            2,
+                            3
+                        ]
+                    }
+                },
+                "itxRestRelatedProducts": {
+                    "enabledChannels": [
+                        "web",
+                        "web_mobile",
+                        "android",
+                        "ios"
+                    ],
+                    "enabledSections": [
+                        "WOMAN",
+                        "MAN",
+                        "KID",
+                        "HOME"
+                    ]
+                },
+                "checkout": {
+                    "disabledCartContinue": false,
+                    "forceShippingMethodSelection": true,
+                    "quickPurchase": {
+                        "isEnabled": false,
+                        "supportedChannels": [
+                            "web",
+                            "web_mobile",
+                            "android",
+                            "ios"
+                        ]
+                    },
+                    "blockSerialReturners": {
+                        "enabledChannels": [
+                            "web",
+                            "web_mobile",
+                            "android",
+                            "ios"
+                        ]
+                    },
+                    "postPayment": {
+                        "supportedChannels": [
+                            "ios",
+                            "android",
+                            "web",
+                            "web-mobile"
+                        ]
+                    },
+                    "genericPunchout": {
+                        "supportedChannels": []
+                    },
+                    "deliveryGroupsEnabled": {
+                        "supportedChannels": [
+                            "web-mobile",
+                            "web",
+                            "android",
+                            "ios",
+                            "store"
+                        ]
+                    },
+                    "getPurchaseAttempt": {
+                        "supportedChannels": []
+                    },
+                    "deliveryGroup": {
+                        "defaultVariant": "DIRECT",
+                        "postShipping": {
+                            "supportedChannels": [
+                                "web",
+                                "web-mobile",
+                                "ios",
+                                "android"
+                            ]
+                        },
+                        "shippingByDelivery": {
+                            "supportedChannels": [
+                                "web",
+                                "web_mobile",
+                                "android",
+                                "ios",
+                                "store"
+                            ]
+                        }
+                    },
+                    "isApplePayEnabled": {
+                        "enabledChannels": [
+                            "web_mobile",
+                            "web"
+                        ]
+                    },
+                    "walletPayment": {
+                        "enabledChannels": [
+                            "web",
+                            "web_mobile",
+                            "android",
+                            "ios"
+                        ],
+                        "supportedFlows": [
+                            "repayment",
+                            "iop_payment"
+                        ]
+                    }
+                },
+                "multiWishlist": {
+                    "enabledChannels": [
+                        "web",
+                        "web_mobile",
+                        "app",
+                        "android",
+                        "ios"
+                    ]
+                },
+                "wishlistActiveChannels": [
+                    "app",
+                    "web",
+                    "web_mobile"
+                ],
+                "wishlistOnUserMenuActiveChannels": [],
+                "wishlistSharingActiveChannels": [
+                    "app",
+                    "web",
+                    "web_mobile"
+                ],
+                "buyLaterActiveChannels": [
+                    "app",
+                    "web",
+                    "web_mobile"
+                ],
+                "categoryGrid": {
+                    "webMobile": {
+                        "clientRows": 8,
+                        "numPreloadMedia": 6
+                    }
+                },
+                "isCookieMigrationEnabled": true,
+                "isNewAddressFormsEnabled": false,
+                "clientTelemetry": {
+                    "pageViewsEnabledChannels": [
+                        "web",
+                        "web_mobile",
+                        "android",
+                        "ios",
+                        "miniprogram"
+                    ],
+                    "addToCartEnabledChannels": [
+                        "web",
+                        "web_mobile",
+                        "android",
+                        "ios",
+                        "miniprogram"
+                    ],
+                    "purchaseConfirmedEnabledChannels": [
+                        "web",
+                        "web_mobile",
+                        "android",
+                        "ios",
+                        "miniprogram"
+                    ]
+                },
+                "isSRPLSSubscriptionEnabled": true,
+                "cookies": {
+                    "cookiesConsent": {
+                        "enabledChannels": [
+                            "web",
+                            "web_mobile",
+                            "ios",
+                            "android"
+                        ],
+                        "oneTrust": {
+                            "ids": {
+                                "web": "cadb9218-57dc-4d9d-88e2-9f60895ffd8e",
+                                "web-mobile": "95ac13d1-7372-4a30-be31-94fe06cb97e4",
+                                "ios": "367ae91a-19e7-413b-8609-3c201c87ebb8",
+                                "android": "22954c7c-4ad1-4bc7-8979-0d5d75129058",
+                                "mini-p": ""
+                            }
+                        }
+                    }
+                },
+                "cookiesConfig": {
+                    "cookiesConsent": {
+                        "enabledChannels": [
+                            "web",
+                            "web_mobile",
+                            "ios",
+                            "android"
+                        ],
+                        "oneTrust": {
+                            "ids": {
+                                "web": "cadb9218-57dc-4d9d-88e2-9f60895ffd8e",
+                                "web-mobile": "95ac13d1-7372-4a30-be31-94fe06cb97e4",
+                                "ios": "367ae91a-19e7-413b-8609-3c201c87ebb8",
+                                "android": "22954c7c-4ad1-4bc7-8979-0d5d75129058",
+                                "mini-p": ""
+                            }
+                        }
+                    }
+                },
+                "returns": {
+                    "paymentMethodsWarning": {
+                        "enabledChannels": [],
+                        "methodsAllowed": []
+                    },
+                    "returnRequestForm": {
+                        "enabledChannels": []
+                    }
+                },
+                "tempe3DViewer": {
+                    "urls": {
+                        "react": "https://static.zara.net/static/applications/tp-3d-viewer/launcher.js",
+                        "standalone": "https://static.zara.net/static/applications/tp-3d-viewer/index.html"
+                    }
+                },
+                "isIOSNewGridEnabled": false,
+                "productRecommendation": {
+                    "enabled": false
+                },
+                "accountVerification": {
+                    "registrationProcessActiveChannels": [],
+                    "registrationProcessV2ActiveChannels": [
+                        "web",
+                        "web_mobile",
+                        "android",
+                        "ios"
+                    ],
+                    "registrationProcessV2VerificationMethod": "PHONE",
+                    "registeredActiveChannels": [
+                        "web",
+                        "web_mobile",
+                        "android",
+                        "ios"
+                    ],
+                    "registrationProcessCaptchaActiveChannels": [],
+                    "phoneLegalTextActiveChannels": [
+                        "web",
+                        "web_mobile",
+                        "ios",
+                        "android"
+                    ]
+                },
+                "liveStreaming": {
+                    "scriptUrls": {
+                        "web": "https://lcx-embed-eu.bambuser.com/default/embed.js",
+                        "apps": "https://static.zara.net/static/contents/bambuser/bambuser-app-embedded.html?ts=1764755304940"
+                    },
+                    "enabledChannels": [
+                        "web",
+                        "web_mobile",
+                        "android",
+                        "ios"
+                    ]
+                },
+                "showCrossBorderPrivacyCheck": false,
+                "legal": {
+                    "ASSISTANT_TERMS": {
+                        "kind": "ASSISTANT_TERMS",
+                        "label": "AI conditions for the assistant",
+                        "url": "https://static.zara.net/static/pdfs/UK/assistant_terms/Assistant-terms-and-conditions-en_UK-01122025.pdf",
+                        "version": "1764547200000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": []
+                    },
+                    "PRIVACY_POLICY": {
+                        "kind": "PRIVACY_POLICY",
+                        "label": "Privacy policy ",
+                        "url": "https://static.zara.net/static/pdfs/UK/privacy-policy/privacy-policy-en_UK-20251113.pdf",
+                        "version": "1762992000000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": [
+                            "home",
+                            "productDetail"
+                        ]
+                    },
+                    "REPAIR_TERMS_AND_CONDITIONS": {
+                        "kind": "REPAIR_TERMS_AND_CONDITIONS",
+                        "label": "Repair terms and conditions",
+                        "url": "https://static.zara.net/static/pdfs/UK/repair-terms-and-conditions/repair-terms-and-conditions-en_UK-20231002.pdf",
+                        "version": "1695772800000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": []
+                    },
+                    "TERMS_AND_CONDITIONS_APP": {
+                        "kind": "TERMS_AND_CONDITIONS_APP",
+                        "label": "T&C features app ",
+                        "url": "https://static.zara.net/static/pdfs/UK/terms-and-conditions-app/terms-and-conditions-app-en_UK-20220621.pdf",
+                        "version": "1655769600000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": []
+                    },
+                    "RESELL_TERMS_AND_CONDITIONS": {
+                        "kind": "RESELL_TERMS_AND_CONDITIONS",
+                        "label": "RESELL_TERMS_AND_CONDITIONS",
+                        "url": "https://static.zara.net/static/pdfs/UK/resell-terms-and-conditions/resell-terms-and-conditions-en_UK-20231023.pdf",
+                        "version": "1698019200000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": []
+                    },
+                    "TERMS_AND_CONDITIONS": {
+                        "kind": "TERMS_AND_CONDITIONS",
+                        "label": "Terms of use ",
+                        "url": "https://static.zara.net/static/pdfs/UK/terms-and-conditions/terms-and-conditions-en_UK-20240723.pdf",
+                        "version": "1721692800000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": [
+                            "home",
+                            "productDetail"
+                        ]
+                    },
+                    "GIFTVIDEO_TERMS": {
+                        "kind": "GIFTVIDEO_TERMS",
+                        "label": "Gift Video Conditions\u200b ",
+                        "url": "https://static.zara.net/static/pdfs/ZARA/giftvideo-conditions/giftvideo-conditions-en_ZARA-20210708.pdf",
+                        "version": "1625702400000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": []
+                    },
+                    "TAX_STRATEGY_AND_APPROACH": {
+                        "kind": "TAX_STRATEGY_AND_APPROACH",
+                        "label": "TAX STRATEGY AND APPROACH ",
+                        "url": "https://static.zara.net/static/pdfs/UK/tax-strategy-and-approach/tax-strategy-and-approach-en_UK-20250131.pdf",
+                        "version": "1738195200000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": [
+                            "home"
+                        ]
+                    },
+                    "ACT_ON_MODERN_SLAVERY": {
+                        "kind": "ACT_ON_MODERN_SLAVERY",
+                        "label": "UK ACT ON MODERN SLAVERY ",
+                        "url": "https://static.zara.net/static/pdfs/UK/act-on-modern-slavery/act-on-modern-slavery-en_UK-20250730.pdf",
+                        "version": "1753833600000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": [
+                            "home"
+                        ]
+                    },
+                    "DONATE_PRIVACY_POLICY": {
+                        "kind": "DONATE_PRIVACY_POLICY",
+                        "label": "Donate privacy policy ",
+                        "url": "https://static.zara.net/static/pdfs/UK/donate-privacy-policy/donate-privacy-policy-en_UK-20221020.pdf",
+                        "version": "1666310400000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": []
+                    },
+                    "GIFTCARD_TERMS": {
+                        "kind": "GIFTCARD_TERMS",
+                        "label": "Gift Card Conditions ",
+                        "url": "https://static.zara.net/static/pdfs/UK/giftcard-conditions/giftcard-conditions-en_UK-20221103.pdf",
+                        "version": "1671667200000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": []
+                    },
+                    "DONATE_TERMS_AND_CONDITIONS": {
+                        "kind": "DONATE_TERMS_AND_CONDITIONS",
+                        "label": "Donate terms and conditions",
+                        "url": "https://static.zara.net/static/pdfs/UK/donate-terms-and-conditions/donate-terms-and-conditions-en_UK-20231002.pdf",
+                        "version": "1695772800000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": []
+                    },
+                    "REPAIR_PRIVACY_POLICY": {
+                        "kind": "REPAIR_PRIVACY_POLICY",
+                        "label": "Repair privacy policy",
+                        "url": "https://static.zara.net/static/pdfs/UK/repair-privacy-policy/repair-privacy-policy-en_UK-20221020.pdf",
+                        "version": "1666310400000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": []
+                    },
+                    "JOINLIFE_TERMS": {
+                        "kind": "JOINLIFE_TERMS",
+                        "label": "Terms and conditions ",
+                        "url": "https://static.zara.net/static/pdfs/UK/joinlife-conditions/joinlife-conditions-en_UK-20210602.pdf",
+                        "version": "1622592000000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": []
+                    },
+                    "GENERATIVE_AI_TERMS": {
+                        "kind": "GENERATIVE_AI_TERMS",
+                        "label": "Generative AI Terms",
+                        "url": "https://static.zara.net/static/pdfs/UK/generative-ai-terms/generative-ai-terms-en_UK-20240418.pdf",
+                        "version": "1713398400000",
+                        "showWarningDuringDays": 0,
+                        "visibleAt": [
+                            "chat"
+                        ]
+                    }
+                },
+                "showSensitivePrivacyCheck": false
+            }
+        },
+        "i18nConfig": {
+            "cacheEnabled": true,
+            "defaultMessage": "",
+            "url": "https://www.zara.com/uk/en/util/messages?v=1627",
+            "version": 1627
+        },
+        "domains": {
+            "desktop": {
+                "dynamic": {
+                    "base": "www.zara.com",
+                    "cn": "www.zara.cn",
+                    "xn": "www.zara.cn"
+                },
+                "static": {
+                    "base": "static.zara.net",
+                    "cn": "static.zara.cn",
+                    "xn": "static.zara.cn"
+                },
+                "ports": {
+                    "plain": 443,
+                    "ssl": 80
+                }
+            }
+        },
+        "serverPorts": {
+            "plain": 443,
+            "ssl": 80
+        },
+        "zenitEndpoints": {
+            "addToCart": "/integration/zenit/topics/meccano.za.pro.store.add-to-cart.input.v1",
+            "click": "/integration/zenit/topics/meccano.za.pro.store.click.input.v1",
+            "hit": "/integration/zenit/topics/meccano.za.store.hit",
+            "impressions": "/integration/zenit/topics/meccano.za.pro.store.impressions.input.v1",
+            "log": "/integration/zenit/topics/meccano.za.pro.store.log.input.v1",
+            "purchaseConfirmed": "/integration/zenit/topics/meccano.za.pro.store.purchase-confirmed.input.v1",
+            "content": "/integration/zenit/topics/meccano.za.pro.store.content-hit.input.v1",
+            "searchAssistant": "/integration/zenit/topics/meccano.za.pro.store.search-assistant.input.v1",
+            "experiments": "/integration/zenit/topics/meccano.za.pro.store.experiments.input.v1"
+        },
+        "o11y": {
+            "channelConfigs": {
+                "standard": {
+                    "projectKey": "ZFRONTST",
+                    "projectName": "zara-front-web",
+                    "apiToken": "3f0f084d-afe7-45d1-b738-0c39136991a0"
+                },
+                "mobile": {
+                    "projectKey": "ZFRONTMB",
+                    "projectName": "zara-front-web-mobile",
+                    "apiToken": "2fb58c33-cd04-495f-87be-97b1fc21e296"
+                },
+                "harmony": {
+                    "projectKey": "ZFRONTHY",
+                    "projectName": "zara-front-web-harmony",
+                    "apiToken": "2af5368c-e37a-4f7c-b57f-615867929a10"
+                }
+            },
+            "bufferSize": 5,
+            "maxLocalStorageQueueSize": 50,
+            "domain": "webecom",
+            "environment": "pro",
+            "collectorUrl": "https://event-tracker.inditex.com/okolector"
+        },
+        "chatConfig": {
+            "zaraApiBaseUrl": "/itxrest",
+            "chatServerUrl": "/chat/http-bind",
+            "mochatApiBaseUrl": "/integration/chat"
+        },
+        "growthBook": {
+            "enabled": true,
+            "clientKey": "sdk-vHkqL16vxPfcTuk",
+            "decryptionKey": "Lw+OlfNj17PSu14fZDWQAg==",
+            "host": "https://features.inditex.com",
+            "enableDevMode": false,
+            "payload": null
+        },
+        "analyticsPlugin": {
+            "zenit": {
+                "environment": "pro"
+            }
+        },
+        "seo": {
+            "productsCategoryPreloadImages": {
+                "enabled": false,
+                "limit": 20
+            },
+            "productDetailPreloadImages": {
+                "enabled": false,
+                "scope": "first"
+            },
+            "experimentMenuEnabled": true
+        }
+    },
+    "renderingEngine": "react",
+    "appVersion": "7.21.2",
+    "i18nVersion": 1627
+}

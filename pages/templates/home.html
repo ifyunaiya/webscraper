@@ -1,0 +1,140 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <title>Price Watch</title>
+</head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#" class="nav-logo">ZaraTrack</a>
+
+                <input type="checkbox" id="nav-toggle" class="nav-toggle">
+                <label for="nav-toggle" class="nav-hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                </label>
+            
+
+
+            <ul class = "nav-menu">
+                <li><a href="#home">About</a></li>
+                <li><a href="#tracker">Tracker</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            </div>
+        </nav>
+
+        
+        <main class = "container mx-auto max-w-5xl px-4 py-8 space-y-8">
+
+            <!-- Tracking page -->
+            <section class="search-box flex flex-col items-center pt-16 pb-8">
+                <h1 class = "brand-title text-center font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Price Tracker - Track Zara Prices across the Web</h1>
+                <p class = "brand-text text-center mt-4">Paste a product URL to start tracking its price.</p>
+
+                <form method="POST" action="{% url 'find_product' %}" class="mt-8 flex w-full max-w-xl flex-col gap-3 sm:flex-row  px-4 py-3 text-neutral-900 placeholder-neutral-400 shadow-sm outline-none transition focus:border-pink-300 focus:ring-2 focus:ring-pink-100">
+                    {% csrf_token %}
+                    <input type="url" name="product_url" placeholder="Paste your product url..." required class=" brand-text min-w-0 flex-1 rounded-xl border border-neutral-200 bg-white px-5 py-4 text-base text-neutral-900 placeholder-neutral-400 shadow-sm outline-none transition duration-200 focus:border-pink-400 focus:ring-4 focus:ring-pink-100t">
+                    <button type="submit" class="brand-text rounded-xl bg-neutral-900 px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-pink-600 focus:outline-none focus:ring-2 focus:ring-pink-300 focus:ring-offset-2">Find Product</button>
+                </form>
+            </section>
+
+             <!-- How it works section -->
+            <section class="px-4 py-8">
+
+                <div class="mx-auto max-w-6xl">
+
+                    <h2 class="brand-title text-center text-2xl font-bold sm:text-3xl md:text-4xl">
+                        How It Works
+                    </h2>
+
+                    <p class="brand-text mx-auto mt-4 max-w-2xl text-center">
+                        Tracking your favourite Zara products is simple.
+                        Just follow these three steps.
+                    </p>
+
+                    <!-- Cards -->
+                    <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
+
+                        <!-- Card 1 -->
+                        <div class="rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+                            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-pink-100 text-xl font-bold text-pink-600">
+                                01
+                            </div>
+
+                            <h3 class="brand-title text-xl font-bold">
+                                Paste a Product URL
+                            </h3>
+
+                            <p class="brand-text mt-3 leading-relaxed text-neutral-600">
+                                Find a Zara product you love and paste its product URL into the search box.
+                            </p>
+                        </div>
+
+
+                        <!-- Card 2 -->
+                        <div class="rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+                            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-pink-100 text-xl font-bold text-pink-600">
+                                02
+                            </div>
+
+                            <h3 class="brand-title text-xl font-bold">
+                                Track the Price
+                            </h3>
+
+                            <p class="brand-text mt-3 leading-relaxed text-neutral-600">
+                                The tracker records the product's price so you can keep an eye on changes over time.
+                            </p>
+                        </div>
+
+
+                        <!-- Card 3 -->
+                        <div class="rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+                            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-pink-100 text-xl font-bold text-pink-600">
+                                03
+                            </div>
+
+                            <h3 class="brand-title text-xl font-bold">
+                                Monitor Price Changes
+                            </h3>
+
+                            <p class="brand-text mt-3 leading-relaxed text-neutral-600">
+                                Check the tracked prices to see when your favourite products become cheaper.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+
+        <!-- Footer -->
+        <footer class="bg-neutral-900 px-4 py-8 text-center text-white">
+
+            <p class="brand-text text-sm text-neutral-300">
+                © 2026 Price Tracker. All rights reserved.
+            </p>
+
+            <p class="mt-2 text-sm text-neutral-400">
+                Keep track of your favourite Zara products.
+            </p>
+
+        </footer>
+
+
+        </main>
+ 
+
+    </body>
+</html>
